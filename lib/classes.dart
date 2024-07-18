@@ -1,7 +1,8 @@
 void main(List<String> args) {
   Person learner = new Person("Willis", 10);
-  Person learner2 = new Person("Okoth", 34);
+  Person learner2 = Person.withIdentity (name : "Okoth", age:34, identityNumber: "12345");
   Person learner3 = new Person("Okay", 30);
+
 
   learner2.updateLivingStatus = true;
   print(learner2._isAlive);
@@ -9,11 +10,11 @@ void main(List<String> args) {
 
 class Person {
   final String name;
-  int age;
+  int? age;
   bool _isAlive = true;
   late final String
       identityNumber; //initialization will be done later and immutable afterwards
-  late String shifNo;//initialization will be later and mutable afterwards
+  late String shifNo; //initialization will be later and mutable afterwards
 
   bool get livingStatus {
     return _isAlive;
@@ -24,4 +25,5 @@ class Person {
   }
 
   Person(this.name, this.age);
+  Person.withIdentity({required this.name, this.age, required this.identityNumber});
 }
