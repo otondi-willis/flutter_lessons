@@ -4,7 +4,6 @@ void main() {
   //bookTitles.add(2);
   print(bookTitles.length); // list of dynamic(can hold a value of any datatype)
 
-
   //map
   Map<String, String>? bookDetails = {
     "Book 1": "Author 1",
@@ -13,4 +12,12 @@ void main() {
   };
   print(bookDetails); // map of fixed datatype(both key and value)
 
+  //var vs dynamic
+
+  dynamic price = 40.5; //type assigned depending on the value stored
+  price = 'c';
+  price = "Hello there";
+  print(price);
+
+  
 }
