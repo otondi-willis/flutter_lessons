@@ -22,7 +22,7 @@ void printCost2(double price, String itemName) {
   print("The cost of $itemName is: $price");
 }
 
-void printCost3({String? name, double? price, String? itemName}) {
+void printCost3({String? name, required double price, String? itemName}) {
   //arguments are  optional
   print("Hey $name the cost of $itemName is: $price");
 }
