@@ -11,6 +11,9 @@ class Person {
   final String name;
   int age;
   bool _isAlive = true;
+  late final String
+      identityNumber; //initialization will be done later and immutable afterwards
+  late String shifNo;//initialization will be later and mutable afterwards
 
   bool get livingStatus {
     return _isAlive;
