@@ -19,5 +19,7 @@ void main() {
   price = "Hello there";
   print(price);
 
+  var bei = 10.0; //type assigned by the compiler once and it sticks
   
+  print(bei);
 }
