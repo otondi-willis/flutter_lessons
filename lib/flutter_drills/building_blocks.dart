@@ -13,6 +13,19 @@ class ChatApp extends StatelessWidget {
       
       title: 'Chat App1',
       theme: ThemeData(primarySwatch: Colors.red),
+      home: LoginPage(),
+    );
+  }
+}
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      
+      title: 'Chat App1',
+      theme: ThemeData(primarySwatch: Colors.red),
       home: Scaffold(
         appBar: AppBar(
           ),
