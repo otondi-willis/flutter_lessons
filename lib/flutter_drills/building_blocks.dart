@@ -10,11 +10,12 @@ class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Chat App',
+      
+      title: 'Chat App1',
+      theme: ThemeData(primarySwatch: Colors.red),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Chat App'),
-        ),
+          ),
         drawer: Drawer(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
