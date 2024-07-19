@@ -16,8 +16,11 @@ class ChatApp extends StatelessWidget {
           title: Text('Chat App'),
         ),
         drawer: Drawer(),
-        
-       
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            print("Button clicked");
+          },
+        ),
       ),
     );
   }
