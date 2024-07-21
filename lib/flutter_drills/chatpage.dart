@@ -20,8 +20,7 @@ class ChatPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 200,
+          Flexible(
             child: ListView(
               children: [
                 Align(
