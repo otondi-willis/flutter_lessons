@@ -15,18 +15,25 @@ class LoginPage extends StatelessWidget {
             print("Button clicked");
           },
         ),
-      // body: Text('Lets sign you in', 
-      // style: TextStyle(
-      //   fontSize: 30, 
-      //   color: Colors.brown,
-      //   fontWeight: FontWeight.bold, 
-      //   letterSpacing: 0.5),),
-      body: Text('Welcome back! \n You\'ve been missed!',
+      
+      body: Column(
+        children: [
+          Text('Lets sign you in', 
       style: TextStyle(
-        fontWeight: FontWeight.bold,
-        fontSize: 20,
-        color: Colors.blueGrey),
-        ),
+        fontSize: 30, 
+        color: Colors.brown,
+        fontWeight: FontWeight.bold, 
+        letterSpacing: 0.5),),
+          Center(
+            child: Text('Welcome back! \n You\'ve been missed!',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20,
+              color: Colors.blueGrey),
+              ),
+          ),
+        ],
+      ),
     );
   }
 }
