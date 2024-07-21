@@ -35,11 +35,14 @@ class LoginPage extends StatelessWidget {
               Container(
                 height: 200,
                 width: 200,
-                color: Colors.blue,
+                
                 child: FlutterLogo(),
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.all(10),
-                
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(12),
+                ),
               )
 
         ],
