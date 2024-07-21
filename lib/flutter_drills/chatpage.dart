@@ -20,11 +20,16 @@ class ChatPage extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.all(12),
-        child: Text('Hi, this is your message', 
-        style: TextStyle(
-          fontSize: 20,
-          color: Colors.white
-        )),
+        child: Column(
+          children: [
+            Text('Hi, this is your message', 
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.white
+            )),
+            Image.network('https://via.placeholder.com/200.png'),
+          ],
+        ),
         margin: EdgeInsets.all(50),
         decoration: BoxDecoration(
           color: Colors.grey,
