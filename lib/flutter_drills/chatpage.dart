@@ -92,6 +92,7 @@ class ChatPage extends StatelessWidget {
           Container(
             height: 50,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
                   onPressed: (){}, 
