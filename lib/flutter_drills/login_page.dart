@@ -32,6 +32,15 @@ class LoginPage extends StatelessWidget {
             ),
             Image.network('https://via.placeholder.com/200.png', 
               height: 200,),
+              Container(
+                height: 200,
+                width: 200,
+                color: Colors.blue,
+                child: FlutterLogo(),
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
+                
+              )
 
         ],
       ),
