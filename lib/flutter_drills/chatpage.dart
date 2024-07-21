@@ -21,6 +21,7 @@ class ChatPage extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(12),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
             Text('Hi, this is your message', 
             style: TextStyle(
