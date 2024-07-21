@@ -52,52 +52,8 @@ class ChatPage extends StatelessWidget {
             child: ListView(
               children: [
                 getChatBubble(Alignment.centerLeft, 'Hi, this is your message!'),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Container(
-                    padding: EdgeInsets.all(12),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text('Hi, this is your message',
-                            style:
-                                TextStyle(fontSize: 20, color: Colors.white)),
-                        Image.network('https://via.placeholder.com/200.png'),
-                      ],
-                    ),
-                    margin: EdgeInsets.all(50),
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          topRight: Radius.circular(12),
-                          bottomLeft: Radius.circular(12)),
-                    ),
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Container(
-                    padding: EdgeInsets.all(12),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text('Hi, this is your message',
-                            style:
-                                TextStyle(fontSize: 20, color: Colors.white)),
-                        Image.network('https://via.placeholder.com/200.png'),
-                      ],
-                    ),
-                    margin: EdgeInsets.all(50),
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(12),
-                          topRight: Radius.circular(12),
-                          bottomLeft: Radius.circular(12)),
-                    ),
-                  ),
-                ),
+                getChatBubble(Alignment.centerRight, 'Hi, this is your message!'),
+                getChatBubble(Alignment.centerRight, 'Hi, this is your message!')
               ],
             ),
           ),
