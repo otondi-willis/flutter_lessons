@@ -20,7 +20,7 @@ class ChatApp extends StatelessWidget {
           backgroundColor: Colors.red,
           foregroundColor: Colors.white,
         ),),
-      home: ChatPage(),
+      home: LoginPage(),
     );
   }
 }
