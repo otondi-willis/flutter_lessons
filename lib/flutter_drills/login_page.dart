@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
           },
         ),
       
-      body: Column(
+      body: Row(
         children: [
           Text('Lets sign you in', 
       style: TextStyle(
@@ -24,14 +24,12 @@ class LoginPage extends StatelessWidget {
         color: Colors.brown,
         fontWeight: FontWeight.bold, 
         letterSpacing: 0.5),),
-          Center(
-            child: Text('Welcome back! \n You\'ve been missed!',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-              color: Colors.blueGrey),
-              ),
-          ),
+          Text('Welcome back! \n You\'ve been missed!',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+            color: Colors.blueGrey),
+            ),
         ],
       ),
     );
