@@ -10,6 +10,7 @@ class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false, // Hide Flutter's debug mode banner
       
       title: 'Chat App1',
       theme: ThemeData(primarySwatch: Colors.red),
@@ -22,12 +23,9 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      
-      title: 'Chat App1',
-      theme: ThemeData(primarySwatch: Colors.red),
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
+          title: Text('Login Page'),
           ),
         drawer: Drawer(),
         floatingActionButton: FloatingActionButton(
@@ -35,7 +33,7 @@ class LoginPage extends StatelessWidget {
             print("Button clicked");
           },
         ),
-      ),
+      
     );
   }
 }
