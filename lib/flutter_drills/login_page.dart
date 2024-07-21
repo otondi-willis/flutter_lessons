@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
             print("Button clicked");
           },
         ),
-      
+      body: Text('Lets sign you in'),
     );
   }
 }

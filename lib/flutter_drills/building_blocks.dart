@@ -14,7 +14,11 @@ class ChatApp extends StatelessWidget {
       debugShowCheckedModeBanner: false, // Hide Flutter's debug mode banner
       
       title: 'Chat App1',
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: ThemeData(primarySwatch: Colors.red,
+      appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white,
+        ),),
       home: LoginPage(),
     );
   }
