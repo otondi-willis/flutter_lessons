@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/chat_bubble.dart/chat_bubble.dart';
+import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -33,25 +34,8 @@ class ChatPage extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            height: 50,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.add, color: Colors.white),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.send, color: Colors.white),
-                ),
-              ],
-            ),
-            decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
-          ),
+          ChatInput(),
+          
         ],
       ),
     );
