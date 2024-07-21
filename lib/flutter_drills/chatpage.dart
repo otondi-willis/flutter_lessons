@@ -5,6 +5,13 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(Icons.logout))
+        ],
+      ),
+      body: Container(),
+    );
   }
 }
