@@ -18,7 +18,7 @@ class ChatPage extends StatelessWidget {
               icon: Icon(Icons.logout))
         ],
       ),
-      body: Column(
+      body: ListView(
         children: [
           Container(
             padding: EdgeInsets.all(12),
