@@ -15,7 +15,12 @@ class LoginPage extends StatelessWidget {
             print("Button clicked");
           },
         ),
-      body: Text('Lets sign you in'),
+      body: Text('Lets sign you in', 
+      style: TextStyle(
+        fontSize: 30, 
+        color: Colors.brown,
+        fontWeight: FontWeight.bold, 
+        letterSpacing: 0.5),),
     );
   }
 }
