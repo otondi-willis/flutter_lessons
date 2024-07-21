@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
           },
         ),
       
-      body: Row(
+      body: Column(
         children: [
           Text('Lets sign you in', 
       style: TextStyle(
@@ -30,6 +30,9 @@ class LoginPage extends StatelessWidget {
             fontSize: 20,
             color: Colors.blueGrey),
             ),
+            Image.network('https://via.placeholder.com/200.png', 
+              height: 200,),
+
         ],
       ),
     );
