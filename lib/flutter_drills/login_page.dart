@@ -9,6 +9,7 @@ class LoginPage extends StatelessWidget {
         
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Lets sign you in', 
         style: TextStyle(
