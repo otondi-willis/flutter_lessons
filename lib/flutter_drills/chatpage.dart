@@ -29,7 +29,7 @@ class ChatPage extends StatelessWidget {
             itemCount: 10,
             itemBuilder: (context, index) {
             return ChatBubble(
-                alignment: Alignment.centerLeft, message: "Hello Willis");
+                alignment: index%2==0 ? Alignment.centerLeft : Alignment.centerRight, message: "Hello Willis");
           })
               // child: ListView(
               //   children: [
