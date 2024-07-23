@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
+  void loginUser() {
+    print('login success!');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +36,7 @@ class LoginPage extends StatelessWidget {
               height: 200,
             ),
             ElevatedButton(
-                onPressed: () {
-                  print('Clicked');
-                },
+                onPressed: loginUser,
                 child: Text(
                   'Click me!',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
