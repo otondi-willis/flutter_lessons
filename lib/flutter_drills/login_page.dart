@@ -29,7 +29,9 @@ class LoginPage extends StatelessWidget {
               Image.network('https://via.placeholder.com/200.png', 
                 height: 200,),
                 
-        
+               ElevatedButton(onPressed: (){}, child: Text('')),
+                OutlinedButton(onPressed: (){}, child: FlutterLogo()),
+                TextButton(onPressed: (){},child: Text('Textbutton'),),
           ],
         ),
       ),
