@@ -39,17 +39,26 @@ class LoginPage extends StatelessWidget {
                 height: 200,
               ),
               ElevatedButton(
-                
                   onPressed: loginUser,
                   child: Text(
                     'Click me!',
-                
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
                   )),
-              OutlinedButton(onPressed: () {}, child: FlutterLogo()),
-              TextButton(
-                onPressed: () {},
-                child: Text('Textbutton'),
+              // OutlinedButton(onPressed: () {}, child: FlutterLogo()),
+              // TextButton(
+              //   onPressed: () {},
+              //   child: Text('Textbutton'),
+              // ),
+              GestureDetector(
+                onTap: () {
+                  print('Link clicked');
+                },
+                child: Column(
+                  children: [
+                    Text('Find us on'),
+                    Text('url'),
+                  ],
+                ),
               ),
             ],
           ),
