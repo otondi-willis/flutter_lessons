@@ -18,7 +18,7 @@ class _CounterStatefulState extends State<CounterStateful> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: (){}),
-      body: Text('0', style: TextStyle(fontSize: 30),),
+      body: Center(child: Text('0', style: TextStyle(fontSize: 30),)),
       
     );
   }
