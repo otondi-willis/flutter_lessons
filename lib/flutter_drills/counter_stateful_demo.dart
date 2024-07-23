@@ -12,14 +12,25 @@ class CounterStateful extends StatefulWidget {
 }
 
 class _CounterStatefulState extends State<CounterStateful> {
+  int counter = 0;
+  void increment() {
+    counter++;
+    print(counter);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: (){}),
-      body: Center(child: Text('0', style: TextStyle(fontSize: 30),)),
-      
+          child: Icon(Icons.add),
+          onPressed: () {
+            increment();
+          }),
+      body: Center(
+          child: Text(
+        '$counter',
+        style: TextStyle(fontSize: 30),
+      )),
     );
   }
 }
