@@ -39,13 +39,16 @@ class LoginPage extends StatelessWidget {
                 height: 200,
               ),
               TextField(
+                onChanged: (value) {
+                  print('value : $value');
+                },
                 decoration: InputDecoration(
                   hintText: 'Add your username',
                   hintStyle: TextStyle(color: Colors.blueGrey),
                   border: OutlineInputBorder(),
                 ),
               ),
-               TextField(
+              TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Type your password',
