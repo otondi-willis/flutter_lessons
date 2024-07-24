@@ -18,6 +18,7 @@ class ChatPage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
+                Navigator.pop(context);
                 print('icon pressed');
               },
               icon: Icon(Icons.logout))
@@ -25,14 +26,16 @@ class ChatPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(child: ListView.builder(
-            itemCount: 10,
-            itemBuilder: (context, index) {
-            return ChatBubble(
-                alignment: index%2==0 ? Alignment.centerLeft : Alignment.centerRight, message: "Hello Willis");
-          })
-              
-              ),
+          Expanded(
+              child: ListView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return ChatBubble(
+                        alignment: index % 2 == 0
+                            ? Alignment.centerLeft
+                            : Alignment.centerRight,
+                        message: "Hello Willis");
+                  })),
           ChatInput(),
         ],
       ),
