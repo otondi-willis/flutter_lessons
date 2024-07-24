@@ -16,6 +16,7 @@ class ChatInput extends StatelessWidget {
             icon: Icon(Icons.add, color: Colors.white),
           ),
           Expanded(child: TextField(
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(),
           )),
           IconButton(
