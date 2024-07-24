@@ -5,10 +5,12 @@ class LoginPage extends StatelessWidget {
 
   void loginUser() {
     print(userNameController.text);
+    print(passwordController.text);
     print('login success!');
   }
 
   final userNameController = TextEditingController();
+  final passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +55,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Type your password',
