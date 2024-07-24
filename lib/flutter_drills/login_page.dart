@@ -40,6 +40,8 @@ class LoginPage extends StatelessWidget {
               ),
               TextField(
                 decoration: InputDecoration(
+                  hintText: 'Add your username',
+                  hintStyle: TextStyle(color: Colors.blueGrey),
                   border: OutlineInputBorder(),
                 ),
               ),
