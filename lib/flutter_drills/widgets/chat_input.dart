@@ -25,6 +25,7 @@ class ChatInput extends StatelessWidget {
                 maxLines: 5,
                 minLines: 1,
                 controller: chatMessageController,
+                textCapitalization: TextCapitalization.sentences,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
                 hintText: "Type your message",
