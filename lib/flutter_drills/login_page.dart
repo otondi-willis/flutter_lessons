@@ -3,16 +3,22 @@ import 'package:flutter/material.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
+  final _formKey = GlobalKey<FormState>();
+
   void loginUser() {
-    if (userNameController.text.length < 5) {
-      //throw error
+    if (_formKey.currentState != null && _formKey.currentState!.validate()) {
+      // if (userNameController.text.length < 5) {
+      //   //throw error
+      // }
+      // if (passwordController.text.length < 5) {
+      //   //throw error
+      // }
+      print(userNameController.text);
+      print(passwordController.text);
+      print('login success!');
+    } else {
+      print('Not successful');
     }
-    if (passwordController.text.length < 5) {
-      //throw error
-    }
-    print(userNameController.text);
-    print(passwordController.text);
-    print('login success!');
   }
 
   final userNameController = TextEditingController();
@@ -53,7 +59,10 @@ class LoginPage extends StatelessWidget {
                 validator: (value) {
                   if (value != null && value.isNotEmpty && value.length < 5) {
                     return 'Your username should be more than 5 characters';
+                  } else if (value != null && value.isEmpty) {
+                    return "Please type your username";
                   }
+                  return null;
                 },
                 controller: userNameController,
                 // onChanged: (value) {
