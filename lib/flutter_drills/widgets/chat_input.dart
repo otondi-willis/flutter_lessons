@@ -10,10 +10,14 @@ class ChatInput extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.add, color: Colors.white),
           ),
+          Expanded(child: TextField(
+            decoration: InputDecoration(),
+          )),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.send, color: Colors.white),
