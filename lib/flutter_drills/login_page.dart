@@ -78,6 +78,7 @@ class LoginPage extends StatelessWidget {
                         border: OutlineInputBorder(),
                       ),
                     ),
+                    SizedBox(height: 24,),
                     TextFormField(
                       controller: passwordController,
                       obscureText: true,
@@ -90,6 +91,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
+              SizedBox(height: 24,),
               ElevatedButton(
                   onPressed: loginUser,
                   child: Text(
