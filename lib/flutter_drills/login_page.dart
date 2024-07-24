@@ -46,6 +46,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
                TextField(
+                obscureText: true,
                 decoration: InputDecoration(
                   hintText: 'Type your password',
                   hintStyle: TextStyle(color: Colors.blueGrey),
