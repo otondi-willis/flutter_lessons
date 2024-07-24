@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lessons/flutter_drills/chatpage.dart';
 import 'package:flutter_lessons/flutter_drills/counter_stateful_demo.dart';
 import 'package:flutter_lessons/flutter_drills/login_page.dart';
+import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 
 void main() {
   runApp(const ChatApp());
@@ -22,7 +23,7 @@ class ChatApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),),
       //home: CounterStateful(buttonColor: Colors.blue     ),
-      home: LoginPage(),
+      home: ChatPage(),
     );
   }
 }
