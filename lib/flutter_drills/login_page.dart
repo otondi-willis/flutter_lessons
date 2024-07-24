@@ -55,32 +55,39 @@ class LoginPage extends StatelessWidget {
                 'https://via.placeholder.com/200.png',
                 height: 200,
               ),
-              TextFormField(
-                validator: (value) {
-                  if (value != null && value.isNotEmpty && value.length < 5) {
-                    return 'Your username should be more than 5 characters';
-                  } else if (value != null && value.isEmpty) {
-                    return "Please type your username";
-                  }
-                  return null;
-                },
-                controller: userNameController,
-                // onChanged: (value) {
-                //   print('value : $value');
-                // },
-                decoration: InputDecoration(
-                  hintText: 'Add your username',
-                  hintStyle: TextStyle(color: Colors.blueGrey),
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              TextField(
-                controller: passwordController,
-                obscureText: true,
-                decoration: InputDecoration(
-                  hintText: 'Type your password',
-                  hintStyle: TextStyle(color: Colors.blueGrey),
-                  border: OutlineInputBorder(),
+              Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    TextFormField(
+                      validator: (value) {
+                        if (value != null && value.isNotEmpty && value.length < 5) {
+                          return 'Your username should be more than 5 characters';
+                        } else if (value != null && value.isEmpty) {
+                          return "Please type your username";
+                        }
+                        return null;
+                      },
+                      controller: userNameController,
+                      // onChanged: (value) {
+                      //   print('value : $value');
+                      // },
+                      decoration: InputDecoration(
+                        hintText: 'Add your username',
+                        hintStyle: TextStyle(color: Colors.blueGrey),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                    TextFormField(
+                      controller: passwordController,
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText: 'Type your password',
+                        hintStyle: TextStyle(color: Colors.blueGrey),
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               ElevatedButton(
