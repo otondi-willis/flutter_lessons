@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
   void loginUser() {
+    print(userNameController.text);
     print('login success!');
   }
+
+  final userNameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +42,10 @@ class LoginPage extends StatelessWidget {
                 height: 200,
               ),
               TextField(
-                onChanged: (value) {
-                  print('value : $value');
-                },
+                controller: userNameController,
+                // onChanged: (value) {
+                //   print('value : $value');
+                // },
                 decoration: InputDecoration(
                   hintText: 'Add your username',
                   hintStyle: TextStyle(color: Colors.blueGrey),
@@ -59,8 +63,8 @@ class LoginPage extends StatelessWidget {
               ElevatedButton(
                   onPressed: loginUser,
                   child: Text(
-                    'Click me!',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w300),
+                    'Login!',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
                   )),
               // OutlinedButton(onPressed: () {}, child: FlutterLogo()),
               // TextButton(
