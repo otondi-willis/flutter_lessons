@@ -4,6 +4,12 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   void loginUser() {
+    if (userNameController.text.length < 5) {
+      //throw error
+    }
+    if (passwordController.text.length < 5) {
+      //throw error
+    }
     print(userNameController.text);
     print(passwordController.text);
     print('login success!');
@@ -43,7 +49,12 @@ class LoginPage extends StatelessWidget {
                 'https://via.placeholder.com/200.png',
                 height: 200,
               ),
-              TextField(
+              TextFormField(
+                validator: (value) {
+                  if (value != null && value.isNotEmpty && value.length < 5) {
+                    return 'Your username should be more than 5 characters';
+                  }
+                },
                 controller: userNameController,
                 // onChanged: (value) {
                 //   print('value : $value');
