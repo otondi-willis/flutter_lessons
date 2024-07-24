@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lessons/flutter_drills/chatpage.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -15,7 +16,7 @@ class LoginPage extends StatelessWidget {
       // }
       print(userNameController.text);
       print(passwordController.text);
-      Navigator.push(context, MaterialPageRoute(builder: (context) => Container(child: Text('Hello'),)));
+      Navigator.push(context, MaterialPageRoute(builder: (context) =>ChatPage()));
       print('login success!');
     } else {
       print('Not successful');
