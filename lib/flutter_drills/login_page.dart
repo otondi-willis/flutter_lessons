@@ -38,6 +38,11 @@ class LoginPage extends StatelessWidget {
                 'https://via.placeholder.com/200.png',
                 height: 200,
               ),
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                ),
+              ),
               ElevatedButton(
                   onPressed: loginUser,
                   child: Text(
