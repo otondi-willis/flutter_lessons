@@ -45,6 +45,13 @@ class LoginPage extends StatelessWidget {
                   border: OutlineInputBorder(),
                 ),
               ),
+               TextField(
+                decoration: InputDecoration(
+                  hintText: 'Type your password',
+                  hintStyle: TextStyle(color: Colors.blueGrey),
+                  border: OutlineInputBorder(),
+                ),
+              ),
               ElevatedButton(
                   onPressed: loginUser,
                   child: Text(
