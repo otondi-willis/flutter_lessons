@@ -5,7 +5,7 @@ class LoginPage extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
 
-  void loginUser() {
+  void loginUser(context) {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
       // if (userNameController.text.length < 5) {
       //   //throw error
@@ -15,6 +15,7 @@ class LoginPage extends StatelessWidget {
       // }
       print(userNameController.text);
       print(passwordController.text);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Container(child: Text('Hello'),)));
       print('login success!');
     } else {
       print('Not successful');
@@ -93,7 +94,9 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: 24,),
               ElevatedButton(
-                  onPressed: loginUser,
+                  onPressed: (){
+                    loginUser(context);
+                  },
                   child: Text(
                     'Login!',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
