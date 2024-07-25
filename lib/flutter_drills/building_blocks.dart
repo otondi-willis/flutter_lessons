@@ -15,16 +15,20 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Hide Flutter's debug mode banner
-      
+
       title: 'Chat App1',
-      theme: ThemeData(primarySwatch: Colors.red,
-      appBarTheme: const AppBarTheme(
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.red,
           foregroundColor: Colors.white,
-        ),),
+        ),
+      ),
       //home: CounterStateful(buttonColor: Colors.blue     ),
       home: LoginPage(),
+      routes: {
+        '/chat' : (context) => ChatPage(username: 'Willis',)
+      },
     );
   }
 }
-
