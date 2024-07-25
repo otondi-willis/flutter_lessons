@@ -2,25 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lessons/utils/textfield_styles.dart';
 
 class LoginTextField extends StatelessWidget {
- 
   final TextEditingController controller;
   final String hintText;
   final FormFieldValidator<String>? validator;
-   const LoginTextField({super.key, 
-   required this.controller,
-   required this.hintText,
-   required this.validator});
+  final bool hasAsterisks;
+  const LoginTextField(
+      {super.key,
+      required this.controller,
+      required this.hintText,
+      this.validator, this.hasAsterisks = false});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: hasAsterisks,
       validator: (value) {
-        if (value != null && value.isNotEmpty && value.length < 5) {
-          return 'Your username should be more than 5 characters';
-        } else if (value != null && value.isEmpty) {
-          return "Please type your username";
-        }
-        return null;
+        if (validator != null) return validator!(value);
       },
       controller: controller,
       // onChanged: (value) {
