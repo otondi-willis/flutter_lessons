@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lessons/flutter_drills/chatpage.dart';
+import 'package:flutter_lessons/flutter_drills/widgets/login_text_field.dart';
 import 'package:flutter_lessons/utils/textfield_styles.dart';
 
 class LoginPage extends StatelessWidget {
@@ -63,24 +64,17 @@ class LoginPage extends StatelessWidget {
                 key: _formKey,
                 child: Column(
                   children: [
-                    TextFormField(
+                    LoginTextField(
+                      hintText: "Enter your username",
                       validator: (value) {
-                        if (value != null && value.isNotEmpty && value.length < 5) {
-                          return 'Your username should be more than 5 characters';
-                        } else if (value != null && value.isEmpty) {
-                          return "Please type your username";
-                        }
-                        return null;
-                      },
-                      controller: userNameController,
-                      // onChanged: (value) {
-                      //   print('value : $value');
-                      // },
-                      decoration: InputDecoration(
-                        hintText: 'Add your username',
-                        hintStyle: TextStyle(color: Colors.blueGrey),
-                        border: OutlineInputBorder(),
-                      ),
+        if (value != null && value.isNotEmpty && value.length < 5) {
+          return 'Your username should be more than 5 characters';
+        } else if (value != null && value.isEmpty) {
+          return "Please type your username";
+        }
+        return null;
+      },
+      controller: userNameController,
                     ),
                     SizedBox(height: 24,),
                     TextFormField(
