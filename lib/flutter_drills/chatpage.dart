@@ -3,11 +3,12 @@ import 'package:flutter_lessons/flutter_drills/widgets/chat_bubble.dart/chat_bub
 import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 
 class ChatPage extends StatelessWidget {
-  final String username;
-  const ChatPage({super.key,required this.username});
+  const ChatPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final username = ModalRoute.of(context)!.settings.arguments as String;
+    
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
