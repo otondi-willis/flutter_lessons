@@ -20,7 +20,7 @@ class ChatPage extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/');
+                Navigator.popAndPushNamed(context, '/');
                 print('icon pressed');
               },
               icon: Icon(Icons.logout))
