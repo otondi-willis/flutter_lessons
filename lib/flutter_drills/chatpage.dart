@@ -3,7 +3,8 @@ import 'package:flutter_lessons/flutter_drills/widgets/chat_bubble.dart/chat_bub
 import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 
 class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+  final String username;
+  const ChatPage({super.key,required this.username});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class ChatPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Text(
-          'Hi Willis',
+          'Hi $username',
           style: TextStyle(color: Colors.blueGrey),
         ),
         actions: [
