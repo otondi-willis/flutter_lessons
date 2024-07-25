@@ -77,14 +77,12 @@ class LoginPage extends StatelessWidget {
       controller: userNameController,
                     ),
                     SizedBox(height: 24,),
-                    TextFormField(
+                    LoginTextField(
+                      hasAsterisks: true,
+                      hintText: "Enter your password",
                       controller: passwordController,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        hintText: 'Type your password',
-                        hintStyle: ThemeTextStyle.loginTextFieldStyle,
-                        border: OutlineInputBorder(),
-                      ),
+                    
+                      
                     ),
                   ],
                 ),
