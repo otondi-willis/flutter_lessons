@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lessons/flutter_drills/chatpage.dart';
+import 'package:flutter_lessons/utils/textfield_styles.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -87,7 +88,7 @@ class LoginPage extends StatelessWidget {
                       obscureText: true,
                       decoration: InputDecoration(
                         hintText: 'Type your password',
-                        hintStyle: TextStyle(color: Colors.blueGrey),
+                        hintStyle: ThemeTextStyle.loginTextFieldStyle,
                         border: OutlineInputBorder(),
                       ),
                     ),
