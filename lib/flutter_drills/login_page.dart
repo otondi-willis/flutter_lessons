@@ -57,8 +57,8 @@ class LoginPage extends StatelessWidget {
                     fontSize: 20,
                     color: Colors.blueGrey),
               ),
-              Image.network(
-                'https://via.placeholder.com/200.png',
+              Image.asset(
+                'assets/login.PNG',
                 height: 200,
               ),
               Form(
