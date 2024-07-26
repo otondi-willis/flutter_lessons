@@ -20,8 +20,8 @@ class LoginPage extends StatelessWidget {
       // }
       print(userNameController.text);
       print(passwordController.text);
-      Navigator.pushReplacementNamed(context,'/chat', arguments: '${userNameController.text}'
-      );
+      Navigator.pushReplacementNamed(context, '/chat',
+          arguments: '${userNameController.text}');
       print('login success!');
     } else {
       print('Not successful');
@@ -30,6 +30,8 @@ class LoginPage extends StatelessWidget {
 
   final userNameController = TextEditingController();
   final passwordController = TextEditingController();
+
+  final _mainUrl = "https://github.com/otondi-willis";
 
   @override
   Widget build(BuildContext context) {
@@ -69,29 +71,29 @@ class LoginPage extends StatelessWidget {
                     LoginTextField(
                       hintText: "Enter your username",
                       validator: (value) {
-        if (value != null && value.isNotEmpty && value.length < 5) {
-          return 'Your username should be more than 5 characters';
-        } else if (value != null && value.isEmpty) {
-          return "Please type your username";
-        }
-        return null;
-      },
-      controller: userNameController,
+                        if (value != null &&
+                            value.isNotEmpty &&
+                            value.length < 5) {
+                          return 'Your username should be more than 5 characters';
+                        } else if (value != null && value.isEmpty) {
+                          return "Please type your username";
+                        }
+                        return null;
+                      },
+                      controller: userNameController,
                     ),
                     verticalSpacing(24),
                     LoginTextField(
                       hasAsterisks: true,
                       hintText: "Enter your password",
                       controller: passwordController,
-                    
-                      
                     ),
                   ],
                 ),
               ),
               verticalSpacing(24),
               ElevatedButton(
-                  onPressed: (){
+                  onPressed: () {
                     loginUser(context);
                   },
                   child: Text(
@@ -104,17 +106,16 @@ class LoginPage extends StatelessWidget {
               //   child: Text('Textbutton'),
               // ),
               GestureDetector(
-                onTap: () async{
+                onTap: () async {
                   print('Link clicked');
-                  if(!await launch('https://github.com/otondi-willis')){
+                  if (!await launch(_mainUrl)) {
                     throw 'Could not launch';
-
                   }
                 },
                 child: Column(
                   children: [
                     Text('Find us on'),
-                    Text('url'),
+                    Text(_mainUrl),
                   ],
                 ),
               ),
