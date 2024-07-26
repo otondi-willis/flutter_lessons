@@ -3,6 +3,7 @@ import 'package:flutter_lessons/flutter_drills/chatpage.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/login_text_field.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/space.dart';
 import 'package:flutter_lessons/utils/textfield_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -103,8 +104,12 @@ class LoginPage extends StatelessWidget {
               //   child: Text('Textbutton'),
               // ),
               GestureDetector(
-                onTap: () {
+                onTap: () async{
                   print('Link clicked');
+                  if(!await launch('https://github.com/otondi-willis')){
+                    throw 'Could not launch';
+
+                  }
                 },
                 child: Column(
                   children: [
