@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class ChatBubble extends StatelessWidget {
   final String message;
   final Alignment alignment;
-  const ChatBubble({super.key, required this.alignment,required this.message});
+  final String imageUrl;
+  final String authorName;
+  const ChatBubble({super.key, required this.alignment, required this.message});
 
   @override
   Widget build(BuildContext context) {
