@@ -121,8 +121,11 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SocialMediaButton.twitter(
+                    size: 20,
+                    color: Colors.blue,
                     url: "https://twitter.com/willisotondi"),
                     SocialMediaButton.linkedin(
                     url: "https://linkedin.com/in/willisotondi")
