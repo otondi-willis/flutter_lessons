@@ -3,6 +3,7 @@ import 'package:flutter_lessons/flutter_drills/chatpage.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/login_text_field.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/space.dart';
 import 'package:flutter_lessons/utils/textfield_styles.dart';
+import 'package:social_media_buttons/social_media_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatelessWidget {
@@ -119,6 +120,14 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
+              Row(
+                children: [
+                  SocialMediaButton.twitter(
+                    url: "https://twitter.com/willisotondi"),
+                    SocialMediaButton.linkedin(
+                    url: "https://linkedin.com/in/willisotondi")
+                ],
+              )
             ],
           ),
         ),
