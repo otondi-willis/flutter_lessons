@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -36,12 +38,18 @@ class ChatPage extends StatelessWidget {
   ];
 
 //load json file into the project
-  _loadInitialMessages() {
-    final response = rootBundle.loadString('assets/mock_messages.json');
+  _loadInitialMessages() async {
+    final response = await rootBundle.loadString('assets/mock_messages.json');
+    final decodedList = jsonDecode(response) as List;
+    final List<ChatMessageEntity> _chatMessages = decodedList.map((ListItem){
+      return ChatMessageEntity.fromJson(ListItem);
+    }).toList();
+    print(_chatMessages.length);
   }
 
   @override
   Widget build(BuildContext context) {
+    _loadInitialMessages();
     final username = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
