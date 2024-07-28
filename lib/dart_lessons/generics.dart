@@ -1,3 +1,4 @@
+//Collections, stateful widgets, futures and streams
 void main() {
   List<String> fruits = ["apple", "orange"];
   print(fruits.runtimeType);
@@ -12,4 +13,19 @@ void main() {
   };
   employeeList.addAll({'3003': true});
   print(employeeList);
+}
+
+//cases like this to avoid duplicity use of generics is key
+class UserRespository {}
+
+class MessageRepository {}
+
+class User {
+  String name;
+  User(this.name);
+}
+
+class Message {
+  String text;
+  Message(this.text);
 }
