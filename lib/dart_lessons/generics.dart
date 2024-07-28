@@ -1,5 +1,5 @@
 //Collections, stateful widgets, futures and streams
-void main() {
+void main1() {
   List<String> fruits = ["apple", "orange"];
   print(fruits.runtimeType);
 
@@ -11,14 +11,21 @@ void main() {
     1001: "John Doe",
     1002: "R Joanes",
   };
-  employeeList.addAll({'3003': true});
+  //employeeList.addAll({'3003': true});
   print(employeeList);
+
+  Repository userRepo = Repository<User>();
+  Repository messageRepo = Repository<Message>();
+
 }
 
 //cases like this to avoid duplicity use of generics is key
-class UserRespository {}
+class Repository<T> {
+  getEntity(T entity) {
+    print(entity.runtimeType);
+  }
+}
 
-class MessageRepository {}
 
 class User {
   String name;
