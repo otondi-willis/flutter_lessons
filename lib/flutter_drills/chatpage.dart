@@ -5,7 +5,7 @@ import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 import 'package:flutter_lessons/models/chat_message_entity.dart';
 
 class ChatPage extends StatelessWidget {
-  const ChatPage({super.key});
+  ChatPage({super.key});
 
   List<ChatMessageEntity> _messages = [
     ChatMessageEntity(
@@ -58,18 +58,14 @@ class ChatPage extends StatelessWidget {
         children: [
           Expanded(
               child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: _messages.length,
                   itemBuilder: (context, index) {
                     return ChatBubble(
                         alignment: index % 2 == 0
                             ? Alignment.centerLeft
                             : Alignment.centerRight,
-                        entity: ChatMessageEntity(
-                          id: '1234',
-                          text: 'Hello this is willis',
-                          createdAt: DateTime.now().millisecondsSinceEpoch,
-                          author: Author(username: 'Willinski'),
-                        ));
+                        entity: _messages[index]
+                        );
                   })),
           ChatInput(),
         ],
