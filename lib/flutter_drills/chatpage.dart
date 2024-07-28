@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/chat_bubble.dart/chat_bubble.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
@@ -30,8 +31,14 @@ class ChatPage extends StatelessWidget {
       id: '1314',
       text: 'I am also good, and you?',
       createdAt: DateTime.now().millisecondsSinceEpoch,
-      author: Author(username: 'Willis'),),
+      author: Author(username: 'Willis'),
+    ),
   ];
+
+//load json file into the project
+  _loadInitialMessages() {
+    final response = rootBundle.loadString('assets/mock_messages.json');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +68,11 @@ class ChatPage extends StatelessWidget {
                   itemCount: _messages.length,
                   itemBuilder: (context, index) {
                     return ChatBubble(
-                        alignment: _messages[index].author.username == 'Willinski'
-                            ? Alignment.centerRight
-                            : Alignment.centerLeft,
-                        entity: _messages[index]
-                        );
+                        alignment:
+                            _messages[index].author.username == 'Willinski'
+                                ? Alignment.centerRight
+                                : Alignment.centerLeft,
+                        entity: _messages[index]);
                   })),
           ChatInput(),
         ],
