@@ -16,7 +16,7 @@ class ChatMessageEntity {
         text: json["text"],
         id: json["id"],
         createdAt: json["createdAt"],
-        author: json["author"]);
+        author: Author.fromJson(json['author']));
   }
 }
 
