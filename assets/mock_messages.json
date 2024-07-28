@@ -1,0 +1,35 @@
+[
+    {
+      "id": "1234",
+      "text": "Hello this is Willis",
+      "createdAt": 1690555200000,
+      "author": {
+        "username": "Willinski"
+      }
+    },
+    {
+      "id": "5678",
+      "text": "Hi Willis, how are you?",
+      "createdAt": 1690555200000,
+      "author": {
+        "username": "Willis"
+      }
+    },
+    {
+      "id": "9101",
+      "text": "I am fine, thank you! How about you?",
+      "createdAt": 1690555200000,
+      "author": {
+        "username": "Willinski"
+      }
+    },
+    {
+      "id": "1314",
+      "text": "I am also good, and you?",
+      "createdAt": 1690555200000,
+      "author": {
+        "username": "Willis"
+      }
+    }
+  ]
+  
