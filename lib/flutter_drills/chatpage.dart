@@ -7,9 +7,14 @@ import 'package:flutter_lessons/flutter_drills/widgets/chat_bubble.dart/chat_bub
 import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 import 'package:flutter_lessons/models/chat_message_entity.dart';
 
-class ChatPage extends StatelessWidget {
+class ChatPage extends StatefulWidget {
   ChatPage({super.key});
 
+  @override
+  State<ChatPage> createState() => _ChatPageState();
+}
+
+class _ChatPageState extends State<ChatPage> {
   List<ChatMessageEntity> _messages = [
     ChatMessageEntity(
       id: '1234',
