@@ -27,6 +27,8 @@ class _ChatPageState extends State<ChatPage> {
       return ChatMessageEntity.fromJson(ListItem);
     }).toList();
     print(_chatMessages.length);
+
+  //final state of the messages
     setState(() {
       _messages = _chatMessages;
     });
