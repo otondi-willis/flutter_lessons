@@ -46,15 +46,22 @@ class _ChatPageState extends State<ChatPage> {
   _loadInitialMessages() async {
     final response = await rootBundle.loadString('assets/mock_messages.json');
     final decodedList = jsonDecode(response) as List;
-    final List<ChatMessageEntity> _chatMessages = decodedList.map((ListItem){
+    final List<ChatMessageEntity> _chatMessages = decodedList.map((ListItem) {
       return ChatMessageEntity.fromJson(ListItem);
     }).toList();
     print(_chatMessages.length);
   }
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    // TODO: implement initState
     _loadInitialMessages();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+   
     final username = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
