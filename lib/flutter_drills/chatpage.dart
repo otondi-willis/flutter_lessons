@@ -18,7 +18,7 @@ class ChatPage extends StatelessWidget {
       id: '5678',
       text: 'Hi Willis, how are you?',
       createdAt: DateTime.now().millisecondsSinceEpoch,
-      author: Author(username: 'Willinski'),
+      author: Author(username: 'Willis'),
     ),
     ChatMessageEntity(
       id: '9101',
@@ -30,7 +30,7 @@ class ChatPage extends StatelessWidget {
       id: '1314',
       text: 'I am also good, and you?',
       createdAt: DateTime.now().millisecondsSinceEpoch,
-      author: Author(username: 'Willinski'),),
+      author: Author(username: 'Willis'),),
   ];
 
   @override
@@ -61,9 +61,9 @@ class ChatPage extends StatelessWidget {
                   itemCount: _messages.length,
                   itemBuilder: (context, index) {
                     return ChatBubble(
-                        alignment: index % 2 == 0
-                            ? Alignment.centerLeft
-                            : Alignment.centerRight,
+                        alignment: _messages[index].author.username == 'Willinski'
+                            ? Alignment.centerRight
+                            : Alignment.centerLeft,
                         entity: _messages[index]
                         );
                   })),
