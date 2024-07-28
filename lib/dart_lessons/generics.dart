@@ -6,7 +6,7 @@ void main() {
   // fruits.add(true);
   // fruits.add(2);
 
-  Map employeeList = {
+  Map<int, String> employeeList = {
     1001: "John Doe",
     1002: "R Joanes",
   };
