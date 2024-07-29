@@ -10,6 +10,7 @@
     {
       "id": "5678",
       "text": "Hi Willis, how are you?",
+      "image": "https://pixelford.com/api/img/small/Dog_LIL_134140.jpg",
       "createdAt": 1690555200000,
       "author": {
         "username": "Willis"
