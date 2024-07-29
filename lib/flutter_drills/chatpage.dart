@@ -31,6 +31,8 @@ class _ChatPageState extends State<ChatPage> {
       setState(() {
         _messages = _chatMessages;
       });
+    }).then((_){
+      print('done!');
     });
     print('print something while waiting')
   }
