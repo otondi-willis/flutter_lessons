@@ -20,24 +20,24 @@ class _ChatPageState extends State<ChatPage> {
 
 //load json file into the project
   _loadInitialMessages() async {
-    final response = await rootBundle.loadString('assets/mock_messages.json');
-    final decodedList = jsonDecode(response) as List;
-    final List<ChatMessageEntity> _chatMessages = decodedList.map((ListItem) {
-      return ChatMessageEntity.fromJson(ListItem);
-    }).toList();
-    print(_chatMessages.length);
+    rootBundle.loadString('assets/mock_messages.json').then((response) {
+      final decodedList = jsonDecode(response) as List;
+      final List<ChatMessageEntity> _chatMessages = decodedList.map((ListItem) {
+        return ChatMessageEntity.fromJson(ListItem);
+      }).toList();
+      print(_chatMessages.length);
 
-    //final state of the messages
-    setState(() {
-      _messages = _chatMessages;
+      //final state of the messages
+      setState(() {
+        _messages = _chatMessages;
+      });
     });
+    print('print something while waiting')
   }
 
   onMessageSent(ChatMessageEntity entity) {
     _messages.add(entity);
-    setState(() {
-      
-    });
+    setState(() {});
   }
 
   @override
@@ -81,7 +81,9 @@ class _ChatPageState extends State<ChatPage> {
                                 : Alignment.centerLeft,
                         entity: _messages[index]);
                   })),
-          ChatInput(onSubmit: onMessageSent,),
+          ChatInput(
+            onSubmit: onMessageSent,
+          ),
         ],
       ),
     );
