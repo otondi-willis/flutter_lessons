@@ -11,6 +11,7 @@ class ChatBubble extends StatelessWidget {
     return Align(
       alignment: alignment,
       child: Container(
+        width: 300,
         padding: EdgeInsets.all(12),
         child: Column(
           mainAxisSize: MainAxisSize.min,
