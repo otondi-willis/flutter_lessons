@@ -16,8 +16,7 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
   //initial state of messages
-  List<ChatMessageEntity> _messages = [
-  ];
+  List<ChatMessageEntity> _messages = [];
 
 //load json file into the project
   _loadInitialMessages() async {
@@ -28,9 +27,16 @@ class _ChatPageState extends State<ChatPage> {
     }).toList();
     print(_chatMessages.length);
 
-  //final state of the messages
+    //final state of the messages
     setState(() {
       _messages = _chatMessages;
+    });
+  }
+
+  onMessageSent(ChatMessageEntity entity) {
+    _messages.add(entity);
+    setState(() {
+      
     });
   }
 
@@ -43,7 +49,6 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-   
     final username = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
@@ -76,7 +81,7 @@ class _ChatPageState extends State<ChatPage> {
                                 : Alignment.centerLeft,
                         entity: _messages[index]);
                   })),
-          ChatInput(),
+          ChatInput(onSubmit: onMessageSent,),
         ],
       ),
     );
