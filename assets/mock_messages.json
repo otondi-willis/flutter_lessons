@@ -2,6 +2,7 @@
     {
       "id": "1234",
       "text": "Hello this is Willis Bwana123",
+      "image": "https://pixelford.com/api/img/small/Dog_LIL_134140.jpg",
       "createdAt": 1690555200000,
       "author": {
         "username": "Willinski"
@@ -18,7 +19,7 @@
     },
     {
       "id": "9101",
-      "text": "I am fine, thank you! How about you?",
+      "text": "hi?",
       "createdAt": 1690555200000,
       "author": {
         "username": "Willinski"
@@ -27,6 +28,7 @@
     {
       "id": "1314",
       "text": "I am also good, and you?",
+      "image": "https://pixelford.com/api/img/small/Dog_LIL_134140.jpg",
       "createdAt": 1690555200000,
       "author": {
         "username": "Willis"
