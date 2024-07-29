@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lessons/models/chat_message_entity.dart';
 
 class ChatInput extends StatelessWidget {
-  ChatInput({super.key});
+  final Function(ChatMessageEntity) onSubmit;
+  ChatInput({super.key, required this.onSubmit});
   final chatMessageController = TextEditingController();
 
   void onSendButtonPressed() {
@@ -12,6 +13,7 @@ class ChatInput extends StatelessWidget {
         id: "243",
         createdAt: DateTime.now().millisecondsSinceEpoch,
         author: Author(username: 'Willis'));
+        onSubmit(newChatMessage);
   }
 
   @override
