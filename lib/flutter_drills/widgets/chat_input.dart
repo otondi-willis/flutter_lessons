@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lessons/models/chat_message_entity.dart';
 
 class ChatInput extends StatelessWidget {
   ChatInput({super.key});
@@ -6,6 +7,11 @@ class ChatInput extends StatelessWidget {
 
   void onSendButtonPressed() {
     print('ChatMessage: ${chatMessageController.text}');
+    final newChatMessage = ChatMessageEntity(
+        text: chatMessageController.text,
+        id: "243",
+        createdAt: DateTime.now().millisecondsSinceEpoch,
+        author: Author(username: 'Willis'));
   }
 
   @override
@@ -21,11 +27,11 @@ class ChatInput extends StatelessWidget {
           ),
           Expanded(
               child: TextField(
-                keyboardType: TextInputType.multiline,
-                maxLines: 5,
-                minLines: 1,
-                controller: chatMessageController,
-                textCapitalization: TextCapitalization.sentences,
+            keyboardType: TextInputType.multiline,
+            maxLines: 5,
+            minLines: 1,
+            controller: chatMessageController,
+            textCapitalization: TextCapitalization.sentences,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
                 hintText: "Type your message",
