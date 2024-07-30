@@ -1,6 +1,7 @@
 
 //letting dart know this is class you want generated code for
 import 'package:json_annotation/json_annotation.dart';
+part 'example.g.dart';
 
 @JsonSerializable()
 class PixelformImage {
