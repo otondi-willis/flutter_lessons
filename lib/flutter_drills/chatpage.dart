@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/chat_bubble.dart/chat_bubble.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 import 'package:flutter_lessons/models/chat_message_entity.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 
 
 class ChatPage extends StatefulWidget {
