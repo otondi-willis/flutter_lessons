@@ -43,6 +43,10 @@ class _ChatPageState extends State<ChatPage> {
     _messages.add(entity);
     setState(() {});
   }
+  _getNetworkImages(){
+    var endpointUrl = Uri.parse('https://pixelford.com/api/img/small/Dog_LIL_134140.jpg');
+    
+  }
 
   @override
   void initState() {
