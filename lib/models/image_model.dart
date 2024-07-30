@@ -14,6 +14,8 @@ class PixelformImage {
       {required this.id,
       required this.filename,
       this.title,
+
+      @JsonKey(name: 'url_full_size')
       required this.urlFullSize,
       required this.urlSmallSize});
 
