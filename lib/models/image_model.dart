@@ -17,6 +17,7 @@ class PixelformImage {
 
       @JsonKey(name: 'url_full_size')
       required this.urlFullSize,
+      @JsonKey(name: 'url_small_size')
       required this.urlSmallSize});
 
       factory PixelformImage.fromJson(Map<String, dynamic> json) => _$PixelformImageFromJson(json);
