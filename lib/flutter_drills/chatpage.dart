@@ -92,6 +92,7 @@ if (response.statusCode == 200)
       ),
       body: Column(
         children: [
+          FutureBuilder(future: future, builder: builder)//builds image when image is ready
           Image.network('src'),//url not immediately available but in the future
           Expanded(
               child: ListView.builder(
