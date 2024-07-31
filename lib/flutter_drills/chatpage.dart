@@ -48,6 +48,12 @@ class _ChatPageState extends State<ChatPage> {
   _getNetworkImages()async{
     var endpointUrl = Uri.parse('https://pixelford.com/api/img/small');
     final response = await http.get(endpointUrl);
+
+final decodedList = jsonDecode(response.body) as List;
+      final List<ChatMessageEntity> _chatMessages = decodedList.map((ListItem) {
+        return ChatMessageEntity.fromJson(ListItem);
+      }).toList();
+
     print(response.body);
   }
 
