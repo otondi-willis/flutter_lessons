@@ -47,6 +47,8 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   //connection to an api
+  //move this to a repository pattern
+  //repositories are classes that encapsulate or contain the logic required to access data sources
   Future<List<PixelformImage>> _getNetworkImages() async {
     var endpointUrl = Uri.parse('https://pixelford.com/api/img/small');
     final response = await http.get(endpointUrl);
