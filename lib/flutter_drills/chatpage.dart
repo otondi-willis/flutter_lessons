@@ -59,6 +59,8 @@ class _ChatPageState extends State<ChatPage> {
 
       print(_imageList[0].urlFullSize);
       return _imageList;
+    } else {
+      throw Exception('API not successful');
     }
   }
 
