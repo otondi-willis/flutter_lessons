@@ -50,12 +50,13 @@ class _ChatPageState extends State<ChatPage> {
     var endpointUrl = Uri.parse('https://pixelford.com/api/img/small');
     final response = await http.get(endpointUrl);
 
-final decodedList = jsonDecode(response.body) as List;
+if (response.statusCode == 200)
+{final decodedList = jsonDecode(response.body) as List;
       final List<PixelformImage> _imageList = decodedList.map((ListItem) {
         return PixelformImage.fromJson(ListItem);
       }).toList();
 
-    print(_imageList[0].urlFullSize);
+    print(_imageList[0].urlFullSize);}
   }
 
   @override
