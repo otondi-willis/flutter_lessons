@@ -92,6 +92,7 @@ if (response.statusCode == 200)
       ),
       body: Column(
         children: [
+          Image.network('src'),
           Expanded(
               child: ListView.builder(
                   itemCount: _messages.length,
