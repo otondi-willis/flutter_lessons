@@ -98,7 +98,8 @@ class _ChatPageState extends State<ChatPage> {
         children: [
           FutureBuilder<List<PixelformImage>>(
               future: _getNetworkImages(),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
+              builder: (BuildContext context, 
+              AsyncSnapshot<List<PixelformImage>> snapshot) {
                 if (snapshot.hasData) return Image.network('src');
                 return CircularProgressIndicator();
               }), //builds image when image is ready
