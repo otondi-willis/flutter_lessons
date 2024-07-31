@@ -47,7 +47,7 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   //connection to an api
-  Future<void> _getNetworkImages() async {
+  Future<List<PixelformImage>> _getNetworkImages() async {
     var endpointUrl = Uri.parse('https://pixelford.com/api/img/small');
     final response = await http.get(endpointUrl);
 
@@ -58,6 +58,7 @@ class _ChatPageState extends State<ChatPage> {
       }).toList();
 
       print(_imageList[0].urlFullSize);
+      return _imageList;
     }
   }
 
