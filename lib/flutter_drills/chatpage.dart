@@ -46,6 +46,7 @@ class _ChatPageState extends State<ChatPage> {
     _messages.add(entity);
     setState(() {});
   }
+  //connection to an api
   _getNetworkImages()async{
     var endpointUrl = Uri.parse('https://pixelford.com/api/img/small');
     final response = await http.get(endpointUrl);
