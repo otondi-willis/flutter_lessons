@@ -96,7 +96,7 @@ class _ChatPageState extends State<ChatPage> {
           FutureBuilder(
               future: _getNetworkImages(),
               builder: (BuildContext context, AsyncSnapshot snapshot) {
-                return Image.network('src');
+                if(snapshot.hasData)return Image.network('src');
               }), //builds image when image is ready
          
           Expanded(
