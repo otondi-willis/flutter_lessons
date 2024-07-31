@@ -55,7 +55,7 @@ final decodedList = jsonDecode(response.body) as List;
         return PixelformImage.fromJson(ListItem);
       }).toList();
 
-    print(response.body);
+    print(_imageList);
   }
 
   @override
