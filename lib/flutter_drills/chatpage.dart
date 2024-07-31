@@ -93,7 +93,7 @@ class _ChatPageState extends State<ChatPage> {
       ),
       body: Column(
         children: [
-          FutureBuilder(
+          FutureBuilder<List<PixelformImage>>(
               future: _getNetworkImages(),
               builder: (BuildContext context, AsyncSnapshot snapshot) {
                 if (snapshot.hasData) return Image.network('src');
