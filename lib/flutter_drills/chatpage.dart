@@ -38,7 +38,7 @@ class _ChatPageState extends State<ChatPage> {
     }).then((_){
       print('done!');
     });
-    print('print something while waiting')
+    print('print something while waiting');
   }
 
   onMessageSent(ChatMessageEntity entity) {
@@ -55,6 +55,7 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     // TODO: implement initState
     _loadInitialMessages();
+    _getNetworkImages();
     super.initState();
   }
 
