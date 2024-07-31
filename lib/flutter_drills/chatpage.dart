@@ -7,7 +7,7 @@ import 'package:flutter_lessons/flutter_drills/widgets/chat_bubble.dart/chat_bub
 import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 import 'package:flutter_lessons/models/chat_message_entity.dart';
 import 'package:flutter_lessons/models/image_model.dart';
-
+import 'package:flutter_lessons/repo/image_repository.dart';
 
 class ChatPage extends StatefulWidget {
   ChatPage({super.key});
@@ -46,19 +46,19 @@ class _ChatPageState extends State<ChatPage> {
     setState(() {});
   }
 
-  
+  final ImageRepository _imageRepo = ImageRepository();
 
   @override
   void initState() {
     // TODO: implement initState
     _loadInitialMessages();
-    _getNetworkImages();
+    
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    _getNetworkImages();
+   
     final username = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
@@ -82,9 +82,10 @@ class _ChatPageState extends State<ChatPage> {
         children: [
           FutureBuilder<List<PixelformImage>>(
               future: _getNetworkImages(),
-              builder: (BuildContext context, 
-              AsyncSnapshot<List<PixelformImage>> snapshot) {
-                if (snapshot.hasData) return Image.network(snapshot.data![0].urlSmallSize);
+              builder: (BuildContext context,
+                  AsyncSnapshot<List<PixelformImage>> snapshot) {
+                if (snapshot.hasData)
+                  return Image.network(snapshot.data![0].urlSmallSize);
                 return CircularProgressIndicator();
               }), //builds image when image is ready
 
