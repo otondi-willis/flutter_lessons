@@ -9,7 +9,6 @@ import 'package:flutter_lessons/models/chat_message_entity.dart';
 import 'package:flutter_lessons/models/image_model.dart';
 import 'package:http/http.dart' as http;
 
-
 class ChatPage extends StatefulWidget {
   ChatPage({super.key});
 
@@ -36,7 +35,7 @@ class _ChatPageState extends State<ChatPage> {
       setState(() {
         _messages = _chatMessages;
       });
-    }).then((_){
+    }).then((_) {
       print('done!');
     });
     print('print something while waiting');
@@ -46,18 +45,20 @@ class _ChatPageState extends State<ChatPage> {
     _messages.add(entity);
     setState(() {});
   }
+
   //connection to an api
-  Future<void> _getNetworkImages()async{
+  Future<void> _getNetworkImages() async {
     var endpointUrl = Uri.parse('https://pixelford.com/api/img/small');
     final response = await http.get(endpointUrl);
 
-if (response.statusCode == 200)
-{final decodedList = jsonDecode(response.body) as List;
+    if (response.statusCode == 200) {
+      final decodedList = jsonDecode(response.body) as List;
       final List<PixelformImage> _imageList = decodedList.map((ListItem) {
         return PixelformImage.fromJson(ListItem);
       }).toList();
 
-    print(_imageList[0].urlFullSize);}
+      print(_imageList[0].urlFullSize);
+    }
   }
 
   @override
@@ -92,9 +93,12 @@ if (response.statusCode == 200)
       ),
       body: Column(
         children: [
-          FutureBuilder(future: _getNetworkImages(), 
-          builder: (BuildContext context, AsyncSnapshot snapshot))//builds image when image is ready
-          Image.network('src'),//url not immediately available but in the future
+          FutureBuilder(
+              future: _getNetworkImages(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                return Image.network('src');
+              }), //builds image when image is ready
+         
           Expanded(
               child: ListView.builder(
                   itemCount: _messages.length,
