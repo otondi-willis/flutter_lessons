@@ -30,7 +30,7 @@ class ChatInput extends StatelessWidget {
               showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
-                    return NetworkImagePickerBody(imageRepo: _imageRepo);
+                    return NetworkImagePickerBody();
                   });
             },
             icon: Icon(Icons.add, color: Colors.white),
