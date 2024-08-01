@@ -3,6 +3,7 @@ import 'package:flutter_lessons/models/image_model.dart';
 import 'package:flutter_lessons/repo/image_repository.dart';
 
 class NetworkImagePickerBody extends StatelessWidget {
+  final Function(String) onImageSelected;
   NetworkImagePickerBody({super.key});
 
   final ImageRepository _imageRepo;
@@ -15,15 +16,16 @@ class NetworkImagePickerBody extends StatelessWidget {
           if (snapshot.hasData) {
             return GridView.builder(
               itemCount: snapshot.data!.length,
-              itemBuilder: (context, index){
-return Image.network(snapshot.data![index].urlSmallSize);
-            }, gridDelegate: 
-            SliverGridDelegateWithMaxCrossAxisExtent(
-              crossAxisSpacing: 2,
-              mainAxisExtent: 2,
-              maxCrossAxisExtent: MediaQuery.of(context).size.width*0.5
-
-            ),);
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                    onTap: () {},
+                    child: Image.network(snapshot.data![index].urlSmallSize));
+              },
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                  crossAxisSpacing: 2,
+                  mainAxisExtent: 2,
+                  maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.5),
+            );
             //
           }
           return Padding(
