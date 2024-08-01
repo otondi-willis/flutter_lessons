@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/picker_body.dart';
 import 'package:flutter_lessons/models/chat_message_entity.dart';
 
-class ChatInput extends StatelessWidget {
+class ChatInput extends StatefulWidget {
   final Function(ChatMessageEntity) onSubmit;
   ChatInput({super.key, required this.onSubmit});
+
+  @override
+  State<ChatInput> createState() => _ChatInputState();
+}
+
+class _ChatInputState extends State<ChatInput> {
   String _selectedImageUrl = '';
+
   final chatMessageController = TextEditingController();
 
   void onSendButtonPressed() {
@@ -15,7 +22,7 @@ class ChatInput extends StatelessWidget {
         id: "243",
         createdAt: DateTime.now().millisecondsSinceEpoch,
         author: Author(username: 'Willis'));
-    onSubmit(newChatMessage);
+    widget.onSubmit(newChatMessage);
   }
 
   onImagePicked(String newImageUrl) {}
