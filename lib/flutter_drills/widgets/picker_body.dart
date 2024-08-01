@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lessons/models/image_model.dart';
 
 class NetworkImagePickerBody extends StatelessWidget {
   const NetworkImagePickerBody({super.key});
