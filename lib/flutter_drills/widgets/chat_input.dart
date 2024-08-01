@@ -29,7 +29,11 @@ class ChatInput extends StatelessWidget {
               showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
-                    return Text('Hellow');
+                    return Padding(
+                    
+                      padding: const EdgeInsets.all(24.0),
+                      child: Text('Hellow'),
+                    );
                   });
             },
             icon: Icon(Icons.add, color: Colors.white),
