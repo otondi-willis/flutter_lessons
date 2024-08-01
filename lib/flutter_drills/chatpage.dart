@@ -80,14 +80,7 @@ class _ChatPageState extends State<ChatPage> {
       ),
       body: Column(
         children: [
-          FutureBuilder<List<PixelformImage>>(
-              future: _imageRepo.getNetworkImages(),
-              builder: (BuildContext context,
-                  AsyncSnapshot<List<PixelformImage>> snapshot) {
-                if (snapshot.hasData)
-                  return Image.network(snapshot.data![0].urlSmallSize);
-                return CircularProgressIndicator();
-              }), //builds image when image is ready
+           
 
           Expanded(
               child: ListView.builder(
