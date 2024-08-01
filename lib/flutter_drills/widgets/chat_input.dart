@@ -55,6 +55,7 @@ class ChatInput extends StatelessWidget {
                     hintStyle: TextStyle(color: Colors.blueGrey),
                     border: InputBorder.none),
               ),
+              if(_selectedImageUrl.isNotEmpty)
               Image.network(_selectedImageUrl),
             ],
           )),
