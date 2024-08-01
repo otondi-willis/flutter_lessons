@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_lessons/flutter_drills/widgets/picker_body.dart';
 import 'package:flutter_lessons/models/chat_message_entity.dart';
 
 class ChatInput extends StatelessWidget {
@@ -29,11 +30,7 @@ class ChatInput extends StatelessWidget {
               showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
-                    return Padding(
-                    
-                      padding: const EdgeInsets.all(24.0),
-                      child: Text('Hellow'),
-                    );
+                    return NetworkImagePickerBody(imageRepo: _imageRepo);
                   });
             },
             icon: Icon(Icons.add, color: Colors.white),
