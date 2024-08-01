@@ -16,6 +16,9 @@ class ChatInput extends StatelessWidget {
         author: Author(username: 'Willis'));
     onSubmit(newChatMessage);
   }
+  onImagePicked(String newImageUrl){
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +33,7 @@ class ChatInput extends StatelessWidget {
               showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
-                    return NetworkImagePickerBody();
+                    return NetworkImagePickerBody(onImageSelected: onImagePicked,);
                   });
             },
             icon: Icon(Icons.add, color: Colors.white),
