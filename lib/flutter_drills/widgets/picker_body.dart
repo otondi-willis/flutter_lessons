@@ -28,7 +28,7 @@ return Image.network(snapshot.data![index].urlSmallSize);
           }
           return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: CircularProgressIndicator(),
+            child: Center(child: CircularProgressIndicator()),
           );
         });
   }
