@@ -5,6 +5,7 @@ import 'package:flutter_lessons/models/chat_message_entity.dart';
 class ChatInput extends StatelessWidget {
   final Function(ChatMessageEntity) onSubmit;
   ChatInput({super.key, required this.onSubmit});
+  String _selectedImageUrl = '';
   final chatMessageController = TextEditingController();
 
   void onSendButtonPressed() {
@@ -16,9 +17,8 @@ class ChatInput extends StatelessWidget {
         author: Author(username: 'Willis'));
     onSubmit(newChatMessage);
   }
-  onImagePicked(String newImageUrl){
 
-  }
+  onImagePicked(String newImageUrl) {}
 
   @override
   Widget build(BuildContext context) {
@@ -33,29 +33,31 @@ class ChatInput extends StatelessWidget {
               showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
-                    return NetworkImagePickerBody(onImageSelected: onImagePicked,);
+                    return NetworkImagePickerBody(
+                      onImageSelected: onImagePicked,
+                    );
                   });
             },
             icon: Icon(Icons.add, color: Colors.white),
           ),
           Expanded(
               child: Column(
-                children: [
-                  TextField(
-                              keyboardType: TextInputType.multiline,
-                              maxLines: 5,
-                              minLines: 1,
-                              controller: chatMessageController,
-                              textCapitalization: TextCapitalization.sentences,
-                              style: TextStyle(color: Colors.white),
-                              decoration: InputDecoration(
+            children: [
+              TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: 5,
+                minLines: 1,
+                controller: chatMessageController,
+                textCapitalization: TextCapitalization.sentences,
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
                     hintText: "Type your message",
                     hintStyle: TextStyle(color: Colors.blueGrey),
                     border: InputBorder.none),
-                            ),
-                            Image.network(src),
-                ],
-              )),
+              ),
+              Image.network(_selectedImageUrl),
+            ],
+          )),
           IconButton(
             onPressed: onSendButtonPressed,
             icon: Icon(Icons.send, color: Colors.white),
