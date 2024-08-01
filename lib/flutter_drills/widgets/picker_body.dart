@@ -13,8 +13,10 @@ class NetworkImagePickerBody extends StatelessWidget {
         builder: (BuildContext context,
             AsyncSnapshot<List<PixelformImage>> snapshot) {
           if (snapshot.hasData) {
-            ListView.builder(itemBuilder: itemBuilder)
-            return Image.network(snapshot.data![0].urlSmallSize);
+            return GridView.builder(itemBuilder: (context, index){
+return Image.network(snapshot.data![index].urlSmallSize);
+            }, gridDelegate: null,);
+            //
           }
           return CircularProgressIndicator();
         });
