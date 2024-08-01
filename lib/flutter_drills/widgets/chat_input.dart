@@ -24,7 +24,10 @@ class ChatInput extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              //Open a bottom sheet that shows a grid of images
+              
+            },
             icon: Icon(Icons.add, color: Colors.white),
           ),
           Expanded(
