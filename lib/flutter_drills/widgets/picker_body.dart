@@ -14,7 +14,7 @@ class NetworkImagePickerBody extends StatelessWidget {
             AsyncSnapshot<List<PixelformImage>> snapshot) {
           if (snapshot.hasData) {
             return GridView.builder(
-              itemCount: snapshot.data.length,
+              itemCount: snapshot.data!.length,
               itemBuilder: (context, index){
 return Image.network(snapshot.data![index].urlSmallSize);
             }, gridDelegate: 
@@ -26,7 +26,10 @@ return Image.network(snapshot.data![index].urlSmallSize);
             ),);
             //
           }
-          return CircularProgressIndicator();
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircularProgressIndicator(),
+          );
         });
   }
 }
