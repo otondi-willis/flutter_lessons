@@ -53,6 +53,7 @@ class ChatInput extends StatelessWidget {
                     hintStyle: TextStyle(color: Colors.blueGrey),
                     border: InputBorder.none),
                             ),
+                            Image.network(src),
                 ],
               )),
           IconButton(
