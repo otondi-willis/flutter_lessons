@@ -5,6 +5,13 @@ class NetworkImagePickerBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return FutureBuilder<List<PixelformImage>>(
+              future: _imageRepo.getNetworkImages(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<List<PixelformImage>> snapshot) {
+                if (snapshot.hasData)
+                  return Image.network(snapshot.data![0].urlSmallSize);
+                return CircularProgressIndicator();
+              });
   }
 }
