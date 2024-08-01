@@ -13,7 +13,7 @@ class ChatInput extends StatelessWidget {
         id: "243",
         createdAt: DateTime.now().millisecondsSinceEpoch,
         author: Author(username: 'Willis'));
-        onSubmit(newChatMessage);
+    onSubmit(newChatMessage);
   }
 
   @override
@@ -26,7 +26,11 @@ class ChatInput extends StatelessWidget {
           IconButton(
             onPressed: () {
               //Open a bottom sheet that shows a grid of images
-              
+              showModalBottomSheet(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return Text('Hellow');
+                  });
             },
             icon: Icon(Icons.add, color: Colors.white),
           ),
