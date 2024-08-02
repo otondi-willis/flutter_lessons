@@ -34,7 +34,7 @@ class _ChatInputState extends State<ChatInput> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
