@@ -23,6 +23,7 @@ class _ChatInputState extends State<ChatInput> {
         createdAt: DateTime.now().millisecondsSinceEpoch,
         author: Author(username: 'Willis'));
     widget.onSubmit(newChatMessage);
+    chatMessageController.clear();
   }
 
   onImagePicked(String newImageUrl) {
