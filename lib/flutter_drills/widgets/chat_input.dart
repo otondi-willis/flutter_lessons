@@ -24,6 +24,7 @@ class _ChatInputState extends State<ChatInput> {
         author: Author(username: 'Willis'));
     widget.onSubmit(newChatMessage);
     chatMessageController.clear();
+    _selectedImageUrl = " ";
   }
 
   onImagePicked(String newImageUrl) {
