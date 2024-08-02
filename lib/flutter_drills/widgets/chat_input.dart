@@ -53,6 +53,7 @@ class _ChatInputState extends State<ChatInput> {
           ),
           Expanded(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
                 keyboardType: TextInputType.multiline,
