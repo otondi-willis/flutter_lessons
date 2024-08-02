@@ -29,12 +29,12 @@ class _ChatInputState extends State<ChatInput> {
     setState(() {
       _selectedImageUrl = newImageUrl;
     });
+    Navigator.of(context).pop();
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -53,7 +53,7 @@ class _ChatInputState extends State<ChatInput> {
           ),
           Expanded(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TextField(
                 keyboardType: TextInputType.multiline,
@@ -67,8 +67,11 @@ class _ChatInputState extends State<ChatInput> {
                     hintStyle: TextStyle(color: Colors.blueGrey),
                     border: InputBorder.none),
               ),
-              if(_selectedImageUrl.isNotEmpty)
-              Image.network(_selectedImageUrl, height: 50,),
+              if (_selectedImageUrl.isNotEmpty)
+                Image.network(
+                  _selectedImageUrl,
+                  height: 50,
+                ),
             ],
           )),
           IconButton(
