@@ -22,12 +22,14 @@ class _ChatInputState extends State<ChatInput> {
         id: "243",
         createdAt: DateTime.now().millisecondsSinceEpoch,
         author: Author(username: 'Willis'));
+
+    if (_selectedImageUrl.isNotEmpty) {
+      newChatMessage.imageUrl = _selectedImageUrl;
+    }
     widget.onSubmit(newChatMessage);
     chatMessageController.clear();
     _selectedImageUrl = " ";
-    setState(() {
-      
-    });
+    setState(() {});
   }
 
   onImagePicked(String newImageUrl) {
