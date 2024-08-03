@@ -5,9 +5,8 @@ import 'package:flutter_lessons/repo/image_repository.dart';
 class NetworkImagePickerBody extends StatelessWidget {
   final Function(String) onImageSelected;
   final ImageRepository _imageRepo;
-  NetworkImagePickerBody({super.key, required this.onImageSelected}):
-
-  _imageRepo = ImageRepository();
+  NetworkImagePickerBody({super.key, required this.onImageSelected})
+      : _imageRepo = ImageRepository();
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<PixelformImage>>(
@@ -30,6 +29,8 @@ class NetworkImagePickerBody extends StatelessWidget {
                   maxCrossAxisExtent: MediaQuery.of(context).size.width * 0.5),
             );
             //
+          } else if (snapshot.hasError) {
+            return Text('This is the error: ${snapshot.error}');
           }
           return Padding(
             padding: const EdgeInsets.all(8.0),
