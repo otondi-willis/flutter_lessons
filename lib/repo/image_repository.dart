@@ -30,6 +30,7 @@ class ImageRepository {
     } on HttpException {
       throw Exception('Could not retrieve the images! Sorry!');
     } on FormatException {
+      throw Exception('Bad response format');
     } catch (e) {
       print('Error fetching images: $e');
     }
