@@ -33,6 +33,7 @@ class ImageRepository {
       throw Exception('Bad response format');
     } catch (e) {
       print('Error fetching images: $e');
+      throw Exception("Unknown error");
     }
   }
 }
