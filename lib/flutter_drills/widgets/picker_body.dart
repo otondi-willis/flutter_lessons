@@ -30,10 +30,13 @@ class NetworkImagePickerBody extends StatelessWidget {
             );
             //
           } else if (snapshot.hasError) {
-            return Text('This is the error: ${snapshot.error}');
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('This is the error: ${snapshot.error}'),
+            );
           }
           return Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(24.0),
             child: Center(child: CircularProgressIndicator()),
           );
         });
