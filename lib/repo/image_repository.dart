@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:flutter_lessons/models/image_model.dart';
 import 'package:http/http.dart' as http;
@@ -24,7 +25,10 @@ class ImageRepository {
       } else {
         throw Exception('API not successful');
       }
-    } catch (e) {
+    } on SocketException {
+
+    } on 
+     catch (e) {
       print('Error fetching images: $e');
     }
   }
