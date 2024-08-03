@@ -4,9 +4,10 @@ import 'package:flutter_lessons/repo/image_repository.dart';
 
 class NetworkImagePickerBody extends StatelessWidget {
   final Function(String) onImageSelected;
-  NetworkImagePickerBody({super.key, required this.onImageSelected});
-
   final ImageRepository _imageRepo;
+  NetworkImagePickerBody({super.key, required this.onImageSelected}):
+
+  _imageRepo = ImageRepository();
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<List<PixelformImage>>(
