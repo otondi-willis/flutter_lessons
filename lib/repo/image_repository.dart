@@ -26,6 +26,7 @@ class ImageRepository {
         throw Exception('API not successful');
       }
     } on SocketException {
+      throw Exception("No internet connection");
     } on HttpException {
     } on FormatException {
     } catch (e) {
