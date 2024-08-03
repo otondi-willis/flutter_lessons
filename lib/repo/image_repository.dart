@@ -26,9 +26,8 @@ class ImageRepository {
         throw Exception('API not successful');
       }
     } on SocketException {
-
-    } on 
-     catch (e) {
+    } on HttpException {
+    } catch (e) {
       print('Error fetching images: $e');
     }
   }
