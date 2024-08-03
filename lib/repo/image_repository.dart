@@ -7,20 +7,25 @@ class ImageRepository {
   //connection to an api
   //move this to a repository pattern
   //repositories are classes that encapsulate or contain the logic required to access data sources
+
   Future<List<PixelformImage>> getNetworkImages() async {
-    var endpointUrl = Uri.parse('https://pixelford.com/api/img/small');
-    final response = await http.get(endpointUrl);
+    try {
+      var endpointUrl = Uri.parse('https://pixelford.com/api/img/small');
+      final response = await http.get(endpointUrl);
 
-    if (response.statusCode == 200) {
-      final decodedList = jsonDecode(response.body) as List;
-      final List<PixelformImage> _imageList = decodedList.map((ListItem) {
-        return PixelformImage.fromJson(ListItem);
-      }).toList();
+      if (response.statusCode == 200) {
+        final decodedList = jsonDecode(response.body) as List;
+        final List<PixelformImage> _imageList = decodedList.map((ListItem) {
+          return PixelformImage.fromJson(ListItem);
+        }).toList();
 
-      print(_imageList[0].urlFullSize);
-      return _imageList;
-    } else {
-      throw Exception('API not successful');
+        print(_imageList[0].urlFullSize);
+        return _imageList;
+      } else {
+        throw Exception('API not successful');
+      }
+    } catch (e) {
+      print('Error fetching images: $e');
     }
   }
 }
