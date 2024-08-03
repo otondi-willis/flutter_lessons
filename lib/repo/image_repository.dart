@@ -27,6 +27,7 @@ class ImageRepository {
       }
     } on SocketException {
     } on HttpException {
+    } on FormatException {
     } catch (e) {
       print('Error fetching images: $e');
     }
