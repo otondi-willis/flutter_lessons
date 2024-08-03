@@ -28,6 +28,7 @@ class ImageRepository {
     } on SocketException {
       throw Exception("No internet connection");
     } on HttpException {
+      throw Exception('Could not retrieve the images! Sorry!');
     } on FormatException {
     } catch (e) {
       print('Error fetching images: $e');
