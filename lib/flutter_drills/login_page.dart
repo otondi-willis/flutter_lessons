@@ -72,10 +72,7 @@ class LoginPage extends StatelessWidget {
               ),
               ),
 
-              Image.asset(
-                'assets/login.PNG',
-                height: 200,
-              ),
+            
               Form(
                 key: _formKey,
                 child: Column(
