@@ -6,7 +6,8 @@ import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(Provider(child: const ChatApp()));
+  runApp(Provider(create: (BuildContext context) {}, 
+  child: const ChatApp()));
 }
 
 class ChatApp extends StatelessWidget {
@@ -28,9 +29,7 @@ class ChatApp extends StatelessWidget {
       ),
       //home: CounterStateful(buttonColor: Colors.blue     ),
       home: LoginPage(),
-      routes: {
-        '/chat' : (context) => ChatPage()
-      },
+      routes: {'/chat': (context) => ChatPage()},
     );
   }
 }
