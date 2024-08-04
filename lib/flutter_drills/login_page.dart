@@ -62,6 +62,7 @@ class LoginPage extends StatelessWidget {
                     fontSize: 20,
                     color: Colors.blueGrey),
               ),
+              verticalSpacing(24),
 
                Container(
               height: 200,
@@ -73,7 +74,7 @@ class LoginPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24),
               ),
               ),
-
+verticalSpacing(24),
             
               Form(
                 key: _formKey,
