@@ -23,6 +23,8 @@ class ChatBubble extends StatelessWidget {
                 style: TextStyle(fontSize: 20, color: Colors.white)),
             if (entity.text != null) 
             Container(
+              height: 200,
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 image: DecorationImage(image: NetworkImage(entity.imageUrl!)),
                 borderRadius: BorderRadius.circular(12),
