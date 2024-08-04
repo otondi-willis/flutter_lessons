@@ -24,6 +24,7 @@ class ChatBubble extends StatelessWidget {
             if (entity.text != null) 
             Container(
               decoration: BoxDecoration(
+                image: DecorationImage(image: NetworkImage(entity.imageUrl!)),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Image.network
