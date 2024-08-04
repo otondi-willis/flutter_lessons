@@ -3,9 +3,10 @@ import 'package:flutter_lessons/flutter_drills/chatpage.dart';
 import 'package:flutter_lessons/flutter_drills/counter_stateful_demo.dart';
 import 'package:flutter_lessons/flutter_drills/login_page.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/chat_input.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const ChatApp());
+  runApp(Provider(child: const ChatApp()));
 }
 
 class ChatApp extends StatelessWidget {
