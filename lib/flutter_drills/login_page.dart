@@ -62,6 +62,16 @@ class LoginPage extends StatelessWidget {
                     fontSize: 20,
                     color: Colors.blueGrey),
               ),
+
+               Container(
+              height: 200,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage('assets/login.PNG')),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              ),
+
               Image.asset(
                 'assets/login.PNG',
                 height: 200,
