@@ -8,7 +8,10 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(Provider(
-      create: (BuildContext context) => AuthService(), child: ChatApp()));
+      create: (BuildContext context) => AuthService(), 
+      child: ChatApp(),
+      )
+      );
 }
 
 class ChatApp extends StatelessWidget {
