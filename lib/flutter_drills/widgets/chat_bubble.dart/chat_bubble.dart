@@ -24,7 +24,7 @@ class ChatBubble extends StatelessWidget {
             if (entity.text != null) Image.network('${entity.imageUrl}'),
           ],
         ),
-        margin: EdgeInsets.all(50),
+        margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: isAuthor ? Theme.of(context).primaryColor : Colors.red,
           borderRadius: BorderRadius.only(
