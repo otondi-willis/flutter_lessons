@@ -54,13 +54,12 @@ class _ChatPageState extends State<ChatPage> {
   void initState() {
     // TODO: implement initState
     _loadInitialMessages();
-    
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-   
     final username = ModalRoute.of(context)!.settings.arguments as String;
 
     return Scaffold(
@@ -75,6 +74,7 @@ class _ChatPageState extends State<ChatPage> {
         actions: [
           IconButton(
               onPressed: () {
+                context.read<AuthService>().logoutUser();
                 Navigator.pushReplacementNamed(context, '/');
                 print('icon pressed');
               },
@@ -83,23 +83,20 @@ class _ChatPageState extends State<ChatPage> {
       ),
       body: Column(
         children: [
-           
-
           Expanded(
               child: ListView.builder(
                   itemCount: _messages.length,
                   itemBuilder: (context, index) {
                     return ChatBubble(
-                        alignment:
-                            _messages[index].author.username == context.read<AuthService>().getUserName()
-                                ? Alignment.centerRight
-                                : Alignment.centerLeft,
+                        alignment: _messages[index].author.username ==
+                                context.read<AuthService>().getUserName()
+                            ? Alignment.centerRight
+                            : Alignment.centerLeft,
                         entity: _messages[index]);
                   })),
           ChatInput(
             onSubmit: onMessageSent,
           ),
-          
         ],
       ),
     );
