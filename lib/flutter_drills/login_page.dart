@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lessons/flutter_drills/chatpage.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/login_text_field.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/space.dart';
+import 'package:flutter_lessons/services/auth_service.dart';
 import 'package:flutter_lessons/utils/textfield_styles.dart';
 import 'package:social_media_buttons/social_media_button.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -11,7 +12,7 @@ class LoginPage extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
 
-  void loginUser(context) {
+  void loginUser(context) async{
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
       // if (userNameController.text.length < 5) {
       //   //throw error
@@ -21,6 +22,8 @@ class LoginPage extends StatelessWidget {
       // }
       print(userNameController.text);
       print(passwordController.text);
+
+      await context.read<AuthService>().loginUser(userNameController.text);
       Navigator.pushReplacementNamed(context, '/chat',
           arguments: '${userNameController.text}');
       print('login success!');
@@ -64,18 +67,18 @@ class LoginPage extends StatelessWidget {
               ),
               verticalSpacing(24),
 
-               Container(
-              height: 200,
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  fit: BoxFit.fitWidth,
-                  image: AssetImage('assets/login.PNG')),
-                borderRadius: BorderRadius.circular(24),
+              Container(
+                height: 200,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.fitWidth,
+                      image: AssetImage('assets/login.PNG')),
+                  borderRadius: BorderRadius.circular(24),
+                ),
               ),
-              ),
-verticalSpacing(24),
-            
+              verticalSpacing(24),
+
               Form(
                 key: _formKey,
                 child: Column(
@@ -135,11 +138,11 @@ verticalSpacing(24),
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SocialMediaButton.twitter(
-                    size: 20,
-                    color: Colors.blue,
-                    url: "https://twitter.com/willisotondi"),
-                    SocialMediaButton.linkedin(
-                    url: "https://linkedin.com/in/willisotondi")
+                      size: 20,
+                      color: Colors.blue,
+                      url: "https://twitter.com/willisotondi"),
+                  SocialMediaButton.linkedin(
+                      url: "https://linkedin.com/in/willisotondi")
                 ],
               )
             ],
