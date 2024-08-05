@@ -9,6 +9,7 @@ import 'package:flutter_lessons/models/chat_message_entity.dart';
 import 'package:flutter_lessons/models/image_model.dart';
 import 'package:flutter_lessons/repo/image_repository.dart';
 import 'package:flutter_lessons/services/auth_service.dart';
+import 'package:provider/provider.dart';
 
 class ChatPage extends StatefulWidget {
   ChatPage({super.key});
@@ -98,6 +99,7 @@ class _ChatPageState extends State<ChatPage> {
           ChatInput(
             onSubmit: onMessageSent,
           ),
+          
         ],
       ),
     );
