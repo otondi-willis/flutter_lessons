@@ -21,7 +21,7 @@ class _ChatInputState extends State<ChatInput> {
         text: chatMessageController.text,
         id: "243",
         createdAt: DateTime.now().millisecondsSinceEpoch,
-        author: Author(username: 'Willis'));
+        author: Author(username: context.read<AuthService>.getUserName()));
 
     if (_selectedImageUrl.isNotEmpty) {
       newChatMessage.imageUrl = _selectedImageUrl;
