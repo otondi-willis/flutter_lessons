@@ -10,7 +10,7 @@ class ChatBubble extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    bool isAuthor = entity.author.username == AuthService().getUserName();
+    bool isAuthor = entity.author.username == context.read<AuthService>.getUserName()().getUserName();
     return Align(
       alignment: alignment,
       child: Container(
