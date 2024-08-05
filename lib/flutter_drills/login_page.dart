@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
 
-  void loginUser(context) async{
+  Future <void> loginUser(context) async{
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
       // if (userNameController.text.length < 5) {
       //   //throw error
@@ -108,8 +108,8 @@ class LoginPage extends StatelessWidget {
               ),
               verticalSpacing(24),
               ElevatedButton(
-                  onPressed: () {
-                    loginUser(context);
+                  onPressed: () async{
+                    await loginUser(context);
                   },
                   child: Text(
                     'Login!',
