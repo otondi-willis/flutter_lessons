@@ -90,7 +90,7 @@ class _ChatPageState extends State<ChatPage> {
                   itemBuilder: (context, index) {
                     return ChatBubble(
                         alignment:
-                            _messages[index].author.username == AuthService().getUserName()
+                            _messages[index].author.username == context.read<AuthService>.getUserName()
                                 ? Alignment.centerRight
                                 : Alignment.centerLeft,
                         entity: _messages[index]);
