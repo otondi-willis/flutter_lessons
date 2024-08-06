@@ -27,7 +27,7 @@ class AuthService {
     return _prefs.getString('userName') ?? "Default Value";
   }
 
-  void updateUserName(String newName) {
-
+  void updateUserName(String newName) async {
+ await _prefs.setString('userName', newName);
   }
 }
