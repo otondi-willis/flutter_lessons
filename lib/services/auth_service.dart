@@ -15,11 +15,11 @@ class AuthService {
     }
   }
 
-  void logoutUser() async {
+  void logoutUser() {
     _prefs.clear();
   }
 
-  Future<String?> getUserName() async {
+  String? getUserName() {
   
     return _prefs.getString('userName') ?? "Default Value";
   }
