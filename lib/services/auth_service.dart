@@ -26,4 +26,8 @@ class AuthService {
   Future<String?> getUserName() async {
     return _prefs.getString('userName') ?? "Default Value";
   }
+
+  void updateUserName(String newName) {
+
+  }
 }
