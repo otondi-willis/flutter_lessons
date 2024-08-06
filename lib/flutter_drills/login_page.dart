@@ -4,6 +4,7 @@ import 'package:flutter_lessons/flutter_drills/widgets/login_text_field.dart';
 import 'package:flutter_lessons/flutter_drills/widgets/space.dart';
 import 'package:flutter_lessons/services/auth_service.dart';
 import 'package:flutter_lessons/utils/textfield_styles.dart';
+import 'package:provider/provider.dart';
 import 'package:social_media_buttons/social_media_button.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -12,7 +13,7 @@ class LoginPage extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
 
-  Future <void> loginUser(context) async{
+  Future <void> loginUser(BuildContext context) async{
     
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
       // if (userNameController.text.length < 5) {
