@@ -16,7 +16,9 @@ class AuthService {
     sharedPrefs.clear();
   }
 
-  String getUserName() {
-    return "Willis";
+  Future <String?> getUserName() async{
+    SharedPreferences sharedPrefs = await _prefs;
+      return sharedPrefs.getString('userName');
+    
   }
 }
