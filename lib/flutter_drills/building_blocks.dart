@@ -7,11 +7,11 @@ import 'package:flutter_lessons/services/auth_service.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  AuthService.init();
   runApp(Provider(
-      create: (BuildContext context) => AuthService(), 
-      child: ChatApp(),
-      )
-      );
+    create: (BuildContext context) => AuthService(),
+    child: ChatApp(),
+  ));
 }
 
 class ChatApp extends StatelessWidget {
