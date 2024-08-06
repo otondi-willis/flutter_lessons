@@ -1,7 +1,11 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
-  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  static init() async {
+    _prefs = await = SharedPreferences.getInstance();
+  }
+
+  static late final Future<SharedPreferences> _prefs;
   Future<void> loginUser(String userName) async {
     try {
       SharedPreferences sharedPrefs = await _prefs;
@@ -16,9 +20,8 @@ class AuthService {
     sharedPrefs.clear();
   }
 
-  Future <String?> getUserName() async{
+  Future<String?> getUserName() async {
     SharedPreferences sharedPrefs = await _prefs;
-      return sharedPrefs.getString('userName')??"Default Value";
-    
+    return sharedPrefs.getString('userName') ?? "Default Value";
   }
 }
