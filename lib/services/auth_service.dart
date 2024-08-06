@@ -20,7 +20,6 @@ class AuthService {
   }
 
   String? getUserName() {
-  
     return _prefs.getString('userName') ?? "Default Value";
   }
 }
