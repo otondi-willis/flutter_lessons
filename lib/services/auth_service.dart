@@ -2,7 +2,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   static init() async {
-    _prefs = await = SharedPreferences.getInstance();
+    _prefs = await  SharedPreferences.getInstance();
   }
 
   static late final Future<SharedPreferences> _prefs;
