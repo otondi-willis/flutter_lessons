@@ -77,14 +77,14 @@ class _ChatPageState extends State<ChatPage> {
                 context.read<AuthService>().updateUserName("newName");
                 
               },
-              icon: Icon(Icons.logout)),
+              icon: Icon(Icons.logout, color: Colors.black,)),
           IconButton(
               onPressed: () {
                 context.read<AuthService>().logoutUser();
                 Navigator.pushReplacementNamed(context, '/');
                 print('icon pressed');
               },
-              icon: Icon(Icons.logout))
+              icon: Icon(Icons.logout, color:  Colors.black))
         ],
       ),
       body: Column(
