@@ -107,6 +107,7 @@ class LoginPage extends StatelessWidget {
 
   Widget _buildForm(context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Form(
           key: _formKey,
