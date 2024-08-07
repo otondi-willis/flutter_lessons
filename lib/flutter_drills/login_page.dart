@@ -159,7 +159,7 @@ class LoginPage extends StatelessWidget {
               //web layout
               return Row(
                 children: [
-                  
+                  Spacer(flex: 1,),
                   Expanded(
                     child: Column(
                       children: [
@@ -171,6 +171,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   Spacer(flex: 1,),
                   Expanded(child: _buildForm(context)),
+                  Spacer(flex: 1,),
                 ],
               );
             }
