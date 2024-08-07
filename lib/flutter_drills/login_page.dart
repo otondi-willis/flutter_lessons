@@ -74,20 +74,8 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget _buildFooter() {}
-  Widget _buildForm() {}
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Form(
+  Widget _buildForm() {
+    return Form(
                 key: _formKey,
                 child: Column(
                   children: [
@@ -113,8 +101,22 @@ class LoginPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              verticalSpacing(24),
+              );
+              //verticalSpacing(24),
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              
               ElevatedButton(
                   onPressed: () async {
                     await loginUser(context);
