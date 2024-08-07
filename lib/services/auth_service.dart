@@ -16,6 +16,14 @@ class AuthService extends ChangeNotifier {
     }
   }
 
+  Future<bool> isLoggedIn() async {
+    String? username = await _prefs.getString('username');
+    if (username == null) {
+      return false;
+    }
+    return true;
+  }
+
   Future<void> logoutUser() async {
     try {
       await _prefs.clear();
@@ -29,7 +37,7 @@ class AuthService extends ChangeNotifier {
   }
 
   void updateUserName(String newName) async {
- await _prefs.setString('userName', newName);
- notifyListeners();
+    await _prefs.setString('userName', newName);
+    notifyListeners();
   }
 }
