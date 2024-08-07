@@ -167,7 +167,6 @@ class LoginPage extends StatelessWidget {
                       children: [
                         _buildHeader(context),
                         _buildFooter(),
-                    
                       ],
                     ),
                   ),
