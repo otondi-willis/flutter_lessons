@@ -77,30 +77,30 @@ class LoginPage extends StatelessWidget {
     return Column(
       children: [
         GestureDetector(
-                onTap: () async {
-                  print('Link clicked');
-                  if (!await launch(_mainUrl)) {
-                    throw 'Could not launch';
-                  }
-                },
-                child: Column(
-                  children: [
-                    Text('Find us on'),
-                    Text(_mainUrl),
-                  ],
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SocialMediaButton.twitter(
-                      size: 20,
-                      color: Colors.blue,
-                      url: "https://twitter.com/willisotondi"),
-                  SocialMediaButton.linkedin(
-                      url: "https://linkedin.com/in/willisotondi")
-                ],
-              )
+          onTap: () async {
+            print('Link clicked');
+            if (!await launch(_mainUrl)) {
+              throw 'Could not launch';
+            }
+          },
+          child: Column(
+            children: [
+              Text('Find us on'),
+              Text(_mainUrl),
+            ],
+          ),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SocialMediaButton.twitter(
+                size: 20,
+                color: Colors.blue,
+                url: "https://twitter.com/willisotondi"),
+            SocialMediaButton.linkedin(
+                url: "https://linkedin.com/in/willisotondi")
+          ],
+        )
       ],
     );
   }
@@ -154,19 +154,20 @@ class LoginPage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: LayoutBuilder(
-            builder: (context, BoxConstraints constraints) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _buildHeader(context),
-                  _buildForm(context),
-                  _buildFooter(),
-                ],
-              );
+          child: LayoutBuilder(builder: (context, BoxConstraints constraints) {
+            if (constraints.maxWidth > 1000) {
+              //web layout
             }
-          ),
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _buildHeader(context),
+                _buildForm(context),
+                _buildFooter(),
+              ],
+            );
+          }),
         ),
       ),
     );
