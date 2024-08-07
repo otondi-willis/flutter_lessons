@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AuthService {
+class AuthService extends ChangeNotifier {
   static late SharedPreferences _prefs;
 
   static Future<void> init() async {
@@ -29,5 +29,6 @@ class AuthService {
 
   void updateUserName(String newName) async {
  await _prefs.setString('userName', newName);
+ notifyListeners();
   }
 }
