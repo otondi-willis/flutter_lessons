@@ -154,14 +154,18 @@ class LoginPage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              _buildHeader(context),
-              _buildForm(context),
-              _buildFooter(),
-            ],
+          child: LayoutBuilder(
+            builder: (context, BoxConstraints constraints) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  _buildHeader(context),
+                  _buildForm(context),
+                  _buildFooter(),
+                ],
+              );
+            }
           ),
         ),
       ),
