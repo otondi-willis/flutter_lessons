@@ -73,66 +73,10 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget _buildFooter() {}
-  Widget _buildForm(context) {
+  Widget _buildFooter() {
     return Column(
       children: [
-        Form(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                        LoginTextField(
-                          hintText: "Enter your username",
-                          validator: (value) {
-                            if (value != null &&
-                                value.isNotEmpty &&
-                                value.length < 5) {
-                              return 'Your username should be more than 5 characters';
-                            } else if (value != null && value.isEmpty) {
-                              return "Please type your username";
-                            }
-                            return null;
-                          },
-                          controller: userNameController,
-                        ),
-                        verticalSpacing(24),
-                        LoginTextField(
-                          hasAsterisks: true,
-                          hintText: "Enter your password",
-                          controller: passwordController,
-                        ),
-                      ],
-                    ),
-                  ),
-                  verticalSpacing(24),
-                   ElevatedButton(
-                  onPressed: () async {
-                    await loginUser(context);
-                  },
-                  child: Text(
-                    'Login!',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
-                  )),
-      ],
-    );
-              
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              
-             
-              
-              GestureDetector(
+        GestureDetector(
                 onTap: () async {
                   print('Link clicked');
                   if (!await launch(_mainUrl)) {
@@ -157,7 +101,62 @@ class LoginPage extends StatelessWidget {
                       url: "https://linkedin.com/in/willisotondi")
                 ],
               )
+      ],
+    );
+  }
+
+  Widget _buildForm(context) {
+    return Column(
+      children: [
+        Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              LoginTextField(
+                hintText: "Enter your username",
+                validator: (value) {
+                  if (value != null && value.isNotEmpty && value.length < 5) {
+                    return 'Your username should be more than 5 characters';
+                  } else if (value != null && value.isEmpty) {
+                    return "Please type your username";
+                  }
+                  return null;
+                },
+                controller: userNameController,
+              ),
+              verticalSpacing(24),
+              LoginTextField(
+                hasAsterisks: true,
+                hintText: "Enter your password",
+                controller: passwordController,
+              ),
             ],
+          ),
+        ),
+        verticalSpacing(24),
+        ElevatedButton(
+            onPressed: () async {
+              await loginUser(context);
+            },
+            child: Text(
+              'Login!',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
+            )),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [],
           ),
         ),
       ),
