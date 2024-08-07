@@ -125,11 +125,7 @@ class LoginPage extends StatelessWidget {
                     'Login!',
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
                   )),
-              // OutlinedButton(onPressed: () {}, child: FlutterLogo()),
-              // TextButton(
-              //   onPressed: () {},
-              //   child: Text('Textbutton'),
-              // ),
+              
               GestureDetector(
                 onTap: () async {
                   print('Link clicked');
