@@ -74,7 +74,7 @@ class LoginPage extends StatelessWidget {
   }
 
   Widget _buildFooter() {}
-  Widget _buildForm() {
+  Widget _buildForm(context) {
     return Column(
       children: [
         Form(
