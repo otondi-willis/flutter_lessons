@@ -39,7 +39,7 @@ class LoginPage extends StatelessWidget {
   final _mainUrl = "https://github.com/otondi-willis";
 
   Widget _buildHeader() {}
-  
+  Widget _buildFooter() {}
 
   @override
   Widget build(BuildContext context) {
