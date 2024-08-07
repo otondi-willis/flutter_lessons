@@ -75,33 +75,37 @@ class LoginPage extends StatelessWidget {
 
   Widget _buildFooter() {}
   Widget _buildForm() {
-    return Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    LoginTextField(
-                      hintText: "Enter your username",
-                      validator: (value) {
-                        if (value != null &&
-                            value.isNotEmpty &&
-                            value.length < 5) {
-                          return 'Your username should be more than 5 characters';
-                        } else if (value != null && value.isEmpty) {
-                          return "Please type your username";
-                        }
-                        return null;
-                      },
-                      controller: userNameController,
+    return Column(
+      children: [
+        Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        LoginTextField(
+                          hintText: "Enter your username",
+                          validator: (value) {
+                            if (value != null &&
+                                value.isNotEmpty &&
+                                value.length < 5) {
+                              return 'Your username should be more than 5 characters';
+                            } else if (value != null && value.isEmpty) {
+                              return "Please type your username";
+                            }
+                            return null;
+                          },
+                          controller: userNameController,
+                        ),
+                        verticalSpacing(24),
+                        LoginTextField(
+                          hasAsterisks: true,
+                          hintText: "Enter your password",
+                          controller: passwordController,
+                        ),
+                      ],
                     ),
-                    verticalSpacing(24),
-                    LoginTextField(
-                      hasAsterisks: true,
-                      hintText: "Enter your password",
-                      controller: passwordController,
-                    ),
-                  ],
-                ),
-              );
+                  ),
+      ],
+    );
               //verticalSpacing(24),
   }
 
@@ -117,14 +121,7 @@ class LoginPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               
-              ElevatedButton(
-                  onPressed: () async {
-                    await loginUser(context);
-                  },
-                  child: Text(
-                    'Login!',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
-                  )),
+             
               
               GestureDetector(
                 onTap: () async {
