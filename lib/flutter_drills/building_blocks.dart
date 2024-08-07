@@ -33,7 +33,11 @@ class ChatApp extends StatelessWidget {
         ),
       ),
       //home: CounterStateful(buttonColor: Colors.blue     ),
-      home: LoginPage(),
+      home: FutureBuilder<bool>( 
+        future: context.read<AuthService>().isLoggedIn(),
+        builder: (context,AsyncSnapshot<bool> snapshot){
+        return CircularProgressIndicator();
+      }),
       routes: {'/chat': (context) => ChatPage()},
     );
   }
