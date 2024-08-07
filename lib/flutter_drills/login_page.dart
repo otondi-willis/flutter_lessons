@@ -159,14 +159,16 @@ class LoginPage extends StatelessWidget {
               //web layout
               return Row(
                 children: [
-                  Column(
-                    children: [
-                      _buildHeader(context),
-                      _buildFooter(),
-
-                    ],
+                  Expanded(
+                    child: Column(
+                      children: [
+                        _buildHeader(context),
+                        _buildFooter(),
+                    
+                      ],
+                    ),
                   ),
-                  _buildForm(context),
+                  Expanded(child: _buildForm(context)),
                 ],
               );
             }
