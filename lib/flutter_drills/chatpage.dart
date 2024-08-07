@@ -60,7 +60,7 @@ class _ChatPageState extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-    final username = context.read<AuthService>().getUserName();
+    final username = context.watch<AuthService>().getUserName();
 
     return Scaffold(
       backgroundColor: Colors.white,
