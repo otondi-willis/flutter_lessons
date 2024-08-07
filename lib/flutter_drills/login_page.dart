@@ -157,6 +157,18 @@ class LoginPage extends StatelessWidget {
           child: LayoutBuilder(builder: (context, BoxConstraints constraints) {
             if (constraints.maxWidth > 1000) {
               //web layout
+              return Row(
+                children: [
+                  Column(
+                    children: [
+                      _buildHeader(context),
+                      _buildFooter(),
+
+                    ],
+                  ),
+                  _buildForm(context),
+                ],
+              );
             }
             return Column(
               mainAxisAlignment: MainAxisAlignment.center,
