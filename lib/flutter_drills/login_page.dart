@@ -13,8 +13,7 @@ class LoginPage extends StatelessWidget {
 
   final _formKey = GlobalKey<FormState>();
 
-  Future <void> loginUser(BuildContext context) async{
-    
+  Future<void> loginUser(BuildContext context) async {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
       // if (userNameController.text.length < 5) {
       //   //throw error
@@ -38,6 +37,9 @@ class LoginPage extends StatelessWidget {
   final passwordController = TextEditingController();
 
   final _mainUrl = "https://github.com/otondi-willis";
+
+  Widget _buildHeader() {}
+  
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +112,7 @@ class LoginPage extends StatelessWidget {
               ),
               verticalSpacing(24),
               ElevatedButton(
-                  onPressed: () async{
+                  onPressed: () async {
                     await loginUser(context);
                   },
                   child: Text(
