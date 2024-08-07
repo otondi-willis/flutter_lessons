@@ -104,9 +104,18 @@ class LoginPage extends StatelessWidget {
                       ],
                     ),
                   ),
+                  verticalSpacing(24),
+                   ElevatedButton(
+                  onPressed: () async {
+                    await loginUser(context);
+                  },
+                  child: Text(
+                    'Login!',
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.w300),
+                  )),
       ],
     );
-              //verticalSpacing(24),
+              
   }
 
   @override
